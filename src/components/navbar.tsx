@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-import logoAsset from "@/assets/fazaa-web-logo.png.asset.json";
+import transparentLogo from "@/assets/fazaa-web-logo-transparent.png";
 import { MobileMenu } from "@/components/mobile-menu";
 import { Button } from "@/components/ui/button";
 import { company, navigation } from "@/lib/site-config";
@@ -29,10 +29,13 @@ export function Navbar() {
           aria-label="فزعة ويب - الرئيسية"
           className="flex min-w-0 items-center focus-visible:rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
         >
-          <span className="brand-logo-window" aria-hidden="true">
-            <img src={logoAsset.url} alt="" className="brand-logo-image" />
-          </span>
-          <span className="sr-only">فزعة ويب</span>
+          <img
+            src={transparentLogo}
+            width="1144"
+            height="768"
+            alt="فزعة ويب"
+            className="h-11 w-auto object-contain drop-shadow-logo sm:h-[3.25rem] lg:h-[3.75rem]"
+          />
         </a>
 
         <nav aria-label="التنقل الرئيسي" className="hidden flex-1 justify-center lg:flex">

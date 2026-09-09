@@ -1,6 +1,6 @@
 import { Menu } from "lucide-react";
 
-import logoAsset from "@/assets/fazaa-web-logo.png.asset.json";
+import transparentLogo from "@/assets/fazaa-web-logo-transparent.png";
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
@@ -34,11 +34,11 @@ export function MobileMenu() {
       >
         <SheetHeader className="items-start text-right">
           <img
-            src={logoAsset.url}
-            width="112"
-            height="75"
+            src={transparentLogo}
+            width="1144"
+            height="768"
             alt="فزعة ويب"
-            className="h-16 w-auto object-contain"
+            className="h-14 w-auto object-contain"
           />
           <SheetTitle className="sr-only">قائمة التنقل</SheetTitle>
           <SheetDescription className="sr-only">روابط أقسام موقع فزعة ويب</SheetDescription>
