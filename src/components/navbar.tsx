@@ -23,19 +23,16 @@ export function Navbar() {
           : "border-transparent bg-transparent"
       }`}
     >
-      <div className="mx-auto grid h-20 w-full max-w-[1560px] grid-cols-[minmax(0,1fr)_auto] items-center gap-3 px-4 sm:h-24 sm:px-6 lg:flex lg:px-10 xl:px-14">
+      <div className="mx-auto grid h-16 w-full max-w-[1560px] grid-cols-[minmax(0,1fr)_auto] items-center gap-3 px-[max(1rem,env(safe-area-inset-right))] sm:h-20 sm:px-6 lg:h-24 lg:flex lg:px-10 xl:px-14">
         <a
           href="#home"
           aria-label="فزعة ويب - الرئيسية"
           className="flex min-w-0 items-center focus-visible:rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
         >
-          <img
-            src={logoAsset.url}
-            width="144"
-            height="96"
-            alt="فزعة ويب"
-            className="h-[4.25rem] w-auto max-w-[8.75rem] object-contain drop-shadow-logo sm:h-20 sm:max-w-[10rem]"
-          />
+          <span className="brand-logo-window" aria-hidden="true">
+            <img src={logoAsset.url} alt="" className="brand-logo-image" />
+          </span>
+          <span className="sr-only">فزعة ويب</span>
         </a>
 
         <nav aria-label="التنقل الرئيسي" className="hidden flex-1 justify-center lg:flex">

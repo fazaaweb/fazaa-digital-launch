@@ -37,8 +37,9 @@ export function Hero() {
   return (
     <section id="home" aria-labelledby="hero-title" className="hero-section relative isolate overflow-hidden">
       <div ref={sceneRef} aria-hidden="true" className="hero-media absolute inset-0">
+        <img src={heroPoster.url} alt="" className="hero-media-backdrop" />
         <video
-          className="h-full w-full object-cover"
+          className="hero-video"
           autoPlay
           muted
           loop
@@ -52,7 +53,7 @@ export function Hero() {
       </div>
       <div aria-hidden="true" className="hero-overlay absolute inset-0" />
 
-      <div className="relative z-10 mx-auto flex min-h-dvh w-full max-w-[1560px] items-end px-5 pb-[max(4.5rem,env(safe-area-inset-bottom))] pt-32 sm:px-8 sm:pb-20 lg:items-center lg:px-14 lg:pb-4 lg:pt-28">
+      <div className="hero-content relative z-10 mx-auto flex w-full max-w-[1560px] items-end px-5 pb-[max(4.5rem,env(safe-area-inset-bottom))] pt-28 sm:px-8 sm:pb-20 lg:items-center lg:px-14 lg:pb-4 lg:pt-28">
         <div className="hero-copy w-full max-w-2xl lg:w-[48%]">
           <h1
             id="hero-title"
