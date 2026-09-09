@@ -9,7 +9,7 @@ export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
-    const update = () => setIsScrolled(window.scrollY > 20);
+    const update = () => setIsScrolled(window.scrollY > 2);
     update();
     window.addEventListener("scroll", update, { passive: true });
     return () => window.removeEventListener("scroll", update);
