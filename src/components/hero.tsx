@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react";
 
 import heroPoster from "@/assets/fazaa-hero-poster.jpg.asset.json";
 import heroVideo from "@/assets/fazaa-hero.mp4.asset.json";
+import heroVideoWebm from "@/assets/fazaa-hero.webm.asset.json";
 import { HeroActions } from "@/components/hero-actions";
 
 export function Hero() {
@@ -45,6 +46,7 @@ export function Hero() {
           preload="metadata"
           poster={heroPoster.url}
         >
+          <source src={heroVideoWebm.url} type="video/webm" />
           <source src={heroVideo.url} type="video/mp4" />
         </video>
       </div>
