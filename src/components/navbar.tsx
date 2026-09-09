@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-import logoAsset from "@/assets/fazaa-web-logo.png.asset.json";
+import transparentLogo from "@/assets/fazaa-web-logo-transparent.png";
 import { MobileMenu } from "@/components/mobile-menu";
 import { Button } from "@/components/ui/button";
 import { company, navigation } from "@/lib/site-config";
@@ -23,18 +23,18 @@ export function Navbar() {
           : "border-transparent bg-transparent"
       }`}
     >
-      <div className="mx-auto grid h-20 w-full max-w-[1560px] grid-cols-[minmax(0,1fr)_auto] items-center gap-3 px-4 sm:h-24 sm:px-6 lg:flex lg:px-10 xl:px-14">
+      <div className="mx-auto grid h-16 w-full max-w-[1560px] grid-cols-[minmax(0,1fr)_auto] items-center gap-3 px-[max(1rem,env(safe-area-inset-right))] sm:h-20 sm:px-6 lg:h-24 lg:flex lg:px-10 xl:px-14">
         <a
           href="#home"
           aria-label="فزعة ويب - الرئيسية"
           className="flex min-w-0 items-center focus-visible:rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
         >
           <img
-            src={logoAsset.url}
-            width="144"
-            height="96"
+            src={transparentLogo}
+            width="1144"
+            height="768"
             alt="فزعة ويب"
-            className="h-[4.25rem] w-auto max-w-[8.75rem] object-contain drop-shadow-logo sm:h-20 sm:max-w-[10rem]"
+            className="h-11 w-auto object-contain drop-shadow-logo sm:h-[3.25rem] lg:h-[3.75rem]"
           />
         </a>
 
