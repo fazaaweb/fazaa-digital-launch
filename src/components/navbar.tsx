@@ -17,7 +17,7 @@ export function Navbar() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-40 border-b transition-all duration-300 ${
+      className={`fixed inset-x-0 top-0 z-50 border-b transition-all duration-300 ${
         isScrolled
           ? "border-border/60 bg-background/80 shadow-nav backdrop-blur-xl"
           : "border-transparent bg-transparent"
@@ -27,15 +27,18 @@ export function Navbar() {
         <a
           href="#home"
           aria-label="فزعة ويب - الرئيسية"
-          className="flex min-w-0 items-center focus-visible:rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+          className="flex min-w-0 items-center gap-2.5 focus-visible:rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring sm:gap-3"
         >
           <img
             src={transparentLogo}
             width="1144"
             height="768"
             alt="فزعة ويب"
-            className="h-11 w-auto object-contain drop-shadow-logo sm:h-[3.25rem] lg:h-[3.75rem]"
+            className="h-12 w-auto shrink-0 object-contain drop-shadow-logo sm:h-14 lg:h-16"
           />
+          <span className="whitespace-nowrap text-base font-bold text-foreground drop-shadow-logo sm:text-lg lg:text-xl">
+            {company.name}
+          </span>
         </a>
 
         <nav aria-label="التنقل الرئيسي" className="hidden flex-1 justify-center lg:flex">
