@@ -30,16 +30,19 @@ export function MobileMenu() {
       <SheetContent
         side="right"
         dir="rtl"
-        className="w-full border-border/60 bg-background/95 px-6 pb-[max(1.5rem,env(safe-area-inset-bottom))] pt-8 backdrop-blur-2xl sm:max-w-sm"
+        className="z-[100] w-full border-border/60 bg-background/95 px-6 pb-[max(1.5rem,env(safe-area-inset-bottom))] pt-8 backdrop-blur-2xl sm:max-w-sm"
       >
         <SheetHeader className="items-start text-right">
-          <img
-            src={transparentLogo}
-            width="1144"
-            height="768"
-            alt="فزعة ويب"
-            className="h-14 w-auto object-contain"
-          />
+          <div className="flex items-center gap-3">
+            <img
+              src={transparentLogo}
+              width="1144"
+              height="768"
+              alt="فزعة ويب"
+              className="h-14 w-auto object-contain"
+            />
+            <span className="text-lg font-bold text-foreground">{company.name}</span>
+          </div>
           <SheetTitle className="sr-only">قائمة التنقل</SheetTitle>
           <SheetDescription className="sr-only">روابط أقسام موقع فزعة ويب</SheetDescription>
         </SheetHeader>
