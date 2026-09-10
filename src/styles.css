@@ -232,8 +232,8 @@ html {
 
 @media (min-width: 640px) and (max-width: 1199px) {
   .hero-video {
-    top: 43%;
     width: 118%;
+    margin-inline: -9%;
   }
 }
 
@@ -245,7 +245,6 @@ html {
     transform: translate3d(var(--scene-x, 0), var(--scene-y, 0), 0) scale(1.025);
     transition: transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
   }
-  .hero-media-backdrop { display: none; }
   .hero-video {
     inset: 0;
     width: 100%;
