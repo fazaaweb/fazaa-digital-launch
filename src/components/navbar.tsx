@@ -27,16 +27,16 @@ export function Navbar() {
         <a
           href="#home"
           aria-label="فزعة ويب - الرئيسية"
-          className="flex min-w-0 items-center gap-2.5 focus-visible:rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring sm:gap-3"
+          className="flex min-w-0 items-center gap-2 focus-visible:rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring sm:gap-2.5"
         >
           <img
             src={transparentLogo}
             width="1144"
             height="768"
             alt="فزعة ويب"
-            className="h-12 w-auto shrink-0 object-contain drop-shadow-logo sm:h-14 lg:h-[4.25rem]"
+            className="h-9 w-auto shrink-0 object-contain drop-shadow-logo sm:h-11 lg:h-13"
           />
-          <span className="hidden whitespace-nowrap text-base font-bold text-foreground drop-shadow-logo lg:block lg:text-xl">
+          <span className="whitespace-nowrap font-sans text-[1.0625rem] font-bold tracking-tight text-foreground drop-shadow-logo sm:text-lg lg:text-xl">
             {company.name}
           </span>
         </a>
