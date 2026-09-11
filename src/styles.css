@@ -1,6 +1,5 @@
 @import "tailwindcss" source(none);
 @source "../src";
-@import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -164,19 +163,21 @@ html {
 }
 
 .hero-media {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
   overflow: hidden;
-  background: var(--background);
+  z-index: 0;
 }
 
 .hero-video {
   position: absolute;
   inset: 0;
-  width: 116%;
-  max-width: none;
+  width: 100%;
   height: 100%;
-  margin-inline: -8%;
-  object-fit: contain;
-  object-position: center top;
+  object-fit: cover;
+  object-position: center;
   z-index: 0;
 }
 
@@ -186,14 +187,11 @@ html {
 }
 
 .hero-overlay {
-  background:
-    linear-gradient(180deg, oklch(0.1 0.02 260 / 18%) 0%, transparent 27%, oklch(0.1 0.02 260 / 36%) 48%, oklch(0.1 0.02 260 / 78%) 76%, var(--background) 100%),
-    linear-gradient(90deg, oklch(0.1 0.02 260 / 12%) 0%, transparent 52%, oklch(0.1 0.02 260 / 18%) 100%);
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.7) 100%);
 }
 
 .hero-copy {
-  margin-top: 33dvh;
-  text-shadow: 0 2px 24px oklch(0.08 0.02 260 / 72%);
+  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.7);
 }
 
 .hero-reveal {
@@ -232,11 +230,9 @@ html {
   to { opacity: 1; transform: translateY(0); }
 }
 
-@media (min-width: 640px) and (max-width: 1199px) {
+@media (max-width: 767px) {
   .hero-video {
-    width: 108%;
-    margin-inline: -4%;
-    object-position: center top;
+    object-position: 50% 50%;
   }
 }
 
@@ -246,31 +242,8 @@ html {
     transition: transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
   }
   .hero-video {
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    margin-inline: 0;
-    aspect-ratio: auto;
-    object-fit: cover;
-    object-position: 37% center;
-    transform: none;
+    object-position: center;
   }
-  .hero-copy {
-    margin-top: 0;
-  }
-  .hero-overlay {
-    background:
-      linear-gradient(180deg, oklch(0.1 0.02 260 / 44%) 0%, transparent 24%, oklch(0.1 0.02 260 / 62%) 100%),
-      linear-gradient(90deg, transparent 0%, oklch(0.1 0.02 260 / 5%) 30%, oklch(0.1 0.02 260 / 84%) 72%, oklch(0.1 0.02 260 / 96%) 100%);
-  }
-}
-
-@media (max-width: 639px) and (max-height: 840px) {
-  .hero-video { width: 112%; margin-inline: -6%; }
-}
-
-@media (max-width: 389px) {
-  .hero-video { width: 110%; margin-inline: -5%; }
 }
 
 @media (prefers-reduced-motion: reduce) {
