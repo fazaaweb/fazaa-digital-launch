@@ -158,7 +158,8 @@ html {
 }
 
 .hero-section {
-  min-height: max(42rem, 100svh);
+  min-height: 100svh;
+  min-height: 100dvh;
   background: var(--background);
 }
 
@@ -170,27 +171,28 @@ html {
 .hero-video {
   position: absolute;
   inset: 0;
-  width: 138%;
+  width: 116%;
   max-width: none;
   height: 100%;
-  margin-inline: -19%;
+  margin-inline: -8%;
   object-fit: contain;
-  object-position: center center;
+  object-position: center top;
   z-index: 0;
 }
 
 .hero-content {
-  min-height: max(42rem, 100svh);
-  min-height: max(42rem, 100dvh);
+  min-height: 100svh;
+  min-height: 100dvh;
 }
 
 .hero-overlay {
   background:
-    linear-gradient(180deg, oklch(0.1 0.02 260 / 24%) 0%, transparent 36%, oklch(0.1 0.02 260 / 42%) 68%, oklch(0.1 0.02 260 / 72%) 100%),
-    linear-gradient(90deg, oklch(0.1 0.02 260 / 8%) 0%, transparent 48%, oklch(0.1 0.02 260 / 20%) 100%);
+    linear-gradient(180deg, oklch(0.1 0.02 260 / 18%) 0%, transparent 27%, oklch(0.1 0.02 260 / 36%) 48%, oklch(0.1 0.02 260 / 78%) 76%, var(--background) 100%),
+    linear-gradient(90deg, oklch(0.1 0.02 260 / 12%) 0%, transparent 52%, oklch(0.1 0.02 260 / 18%) 100%);
 }
 
 .hero-copy {
+  margin-top: 33dvh;
   text-shadow: 0 2px 24px oklch(0.08 0.02 260 / 72%);
 }
 
@@ -226,18 +228,16 @@ html {
 }
 
 @keyframes hero-reveal {
-  from { opacity: 0; transform: translateY(18px); filter: blur(5px); }
-  to { opacity: 1; transform: translateY(0); filter: blur(0); }
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 @media (min-width: 640px) and (max-width: 1199px) {
   .hero-video {
-    width: 118%;
-    margin-inline: -9%;
+    width: 108%;
+    margin-inline: -4%;
+    object-position: center top;
   }
-}
-
-@media (min-width: 640px) {
 }
 
 @media (min-width: 1200px) {
@@ -255,6 +255,9 @@ html {
     object-position: 37% center;
     transform: none;
   }
+  .hero-copy {
+    margin-top: 0;
+  }
   .hero-overlay {
     background:
       linear-gradient(180deg, oklch(0.1 0.02 260 / 44%) 0%, transparent 24%, oklch(0.1 0.02 260 / 62%) 100%),
@@ -263,7 +266,11 @@ html {
 }
 
 @media (max-width: 639px) and (max-height: 840px) {
-  .hero-video { width: 132%; margin-inline: -16%; object-position: center 42%; }
+  .hero-video { width: 112%; margin-inline: -6%; }
+}
+
+@media (max-width: 389px) {
+  .hero-video { width: 110%; margin-inline: -5%; }
 }
 
 @media (prefers-reduced-motion: reduce) {

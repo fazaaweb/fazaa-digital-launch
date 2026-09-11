@@ -23,7 +23,7 @@ export function Navbar() {
           : "border-transparent bg-transparent"
       }`}
     >
-      <div className="mx-auto grid h-16 w-full max-w-[1560px] grid-cols-[minmax(0,1fr)_auto] items-center gap-3 px-[max(1rem,env(safe-area-inset-right))] sm:h-20 sm:px-6 lg:h-24 lg:flex lg:px-10 xl:px-14">
+      <div className="mx-auto grid h-[3.75rem] w-full max-w-[1560px] grid-cols-[minmax(0,1fr)_auto] items-center gap-3 px-[max(1rem,env(safe-area-inset-right))] sm:h-[4.5rem] sm:px-6 lg:h-24 lg:flex lg:px-10 xl:px-14">
         <a
           href="#home"
           aria-label="فزعة ويب - الرئيسية"
@@ -34,9 +34,9 @@ export function Navbar() {
             width="1144"
             height="768"
             alt="فزعة ويب"
-            className="h-12 w-auto shrink-0 object-contain drop-shadow-logo sm:h-14 lg:h-16"
+            className="h-14 w-auto shrink-0 object-contain drop-shadow-logo sm:h-16 lg:h-20"
           />
-          <span className="whitespace-nowrap text-base font-bold text-foreground drop-shadow-logo sm:text-lg lg:text-xl">
+          <span className="hidden whitespace-nowrap text-base font-bold text-foreground drop-shadow-logo lg:block lg:text-xl">
             {company.name}
           </span>
         </a>

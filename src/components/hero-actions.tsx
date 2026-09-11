@@ -5,7 +5,7 @@ import { company } from "@/lib/site-config";
 
 export function HeroActions() {
   return (
-    <div className="hero-reveal hero-delay-3 relative z-[11] flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
+    <div className="hero-reveal hero-delay-3 relative z-[11] flex w-full flex-col gap-2.5 sm:w-auto sm:flex-row sm:gap-3">
       <Button asChild variant="hero" size="hero" className="w-full sm:w-auto">
         <a href="#contact">
           {company.primaryCta}
