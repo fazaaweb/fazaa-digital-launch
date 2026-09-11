@@ -192,6 +192,7 @@ html {
 }
 
 .hero-copy {
+  margin-top: 33dvh;
   text-shadow: 0 2px 24px oklch(0.08 0.02 260 / 72%);
 }
 
@@ -253,6 +254,9 @@ html {
     object-fit: cover;
     object-position: 37% center;
     transform: none;
+  }
+  .hero-copy {
+    margin-top: 0;
   }
   .hero-overlay {
     background:

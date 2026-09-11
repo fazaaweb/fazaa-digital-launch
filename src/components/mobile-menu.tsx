@@ -22,7 +22,7 @@ export function MobileMenu() {
           variant="heroOutline"
           size="icon"
           aria-label="فتح القائمة"
-          className="min-h-11 min-w-11 md:hidden"
+          className="min-h-11 min-w-11 lg:hidden"
         >
           <Menu aria-hidden="true" />
         </Button>

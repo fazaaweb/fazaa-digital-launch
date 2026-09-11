@@ -52,11 +52,11 @@ export function Hero() {
       </div>
       <div aria-hidden="true" className="hero-overlay pointer-events-none absolute inset-0 z-[1]" />
 
-      <div className="hero-content relative z-10 mx-auto flex w-full max-w-[1560px] items-end px-5 pb-[max(2.75rem,env(safe-area-inset-bottom))] pt-20 sm:px-8 sm:pb-14 sm:pt-24 lg:items-center lg:px-14 lg:pb-4 lg:pt-28">
-        <div className="hero-copy w-full max-w-[38rem] lg:w-[48%] lg:max-w-2xl">
+      <div className="hero-content relative z-10 mx-auto flex w-full max-w-[1560px] items-start px-5 pb-[max(2.75rem,env(safe-area-inset-bottom))] pt-20 sm:px-8 sm:pb-14 sm:pt-24 lg:px-14 lg:pt-28 xl:items-center xl:pb-4">
+        <div className="hero-copy w-full max-w-[38rem] xl:w-[48%] xl:max-w-2xl 2xl:max-w-3xl">
           <h1
             id="hero-title"
-            className="hero-reveal max-w-[21rem] text-balance text-[2.05rem] font-extrabold leading-[1.28] text-foreground min-[390px]:max-w-[23rem] min-[390px]:text-[2.2rem] sm:max-w-xl sm:text-5xl sm:leading-[1.22] lg:text-[3.6rem] xl:text-[4.15rem] 2xl:text-[4.65rem]"
+            className="hero-reveal max-w-[21rem] text-balance text-[2.05rem] font-extrabold leading-[1.28] text-foreground min-[390px]:max-w-[23rem] min-[390px]:text-[2.2rem] sm:max-w-xl sm:text-5xl sm:leading-[1.22] xl:text-[4.15rem] 2xl:max-w-3xl 2xl:text-[4.65rem]"
           >
             نصنع حضورًا رقميًا
             <span className="block text-primary-highlight">يليق بمشروعك.</span>
