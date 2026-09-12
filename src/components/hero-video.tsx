@@ -8,9 +8,9 @@ import heroVideoWebm from "@/assets/fazaa-hero.webm";
  * نقاط التكرار: تم تحديدها بعد تحليل إطارات الفيديو (المدة 8 ثوانٍ).
  * نتوقف قبل حركة النهاية ونعود إلى نقطة بداية مطابقة بصريًا للمشهد.
  */
-const LOOP_START = 0.05;
-const TAIL_TRIM = 0.8; // الجزء الأخير الذي لا يُعرض أبدًا (حركة النهاية)
-const CROSSFADE = 0.45; // مدة الانتقال اللطيف بين الدورتين
+const LOOP_START = 0;
+const TAIL_TRIM = 0.5; // الجزء الأخير الذي لا يُعرض أبدًا (حركة النهاية)
+const CROSSFADE = 1.4; // مدة الانتقال اللطيف بين الدورتين
 
 /**
  * حلقة فيديو غير محسوسة: طبقتان من نفس الفيديو تتبادلان التشغيل،
@@ -38,7 +38,7 @@ export function HeroVideo() {
     const prepare = () => {
       for (const video of [a, b]) {
         video.muted = true;
-        if (video.currentTime < LOOP_START) video.currentTime = LOOP_START;
+        video.currentTime = LOOP_START;
       }
       b.style.opacity = "0";
       a.style.opacity = "1";
@@ -118,7 +118,7 @@ export function HeroVideo() {
           className="hero-video"
           style={{
             opacity: index === 0 ? 1 : 0,
-            transition: `opacity ${CROSSFADE}s linear`,
+            transition: `opacity ${CROSSFADE}s cubic-bezier(0.45, 0, 0.55, 1)`,
           }}
           autoPlay={index === 0}
           muted
