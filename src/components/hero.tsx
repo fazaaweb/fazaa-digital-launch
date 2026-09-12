@@ -1,9 +1,7 @@
 import { useEffect, useRef } from "react";
 
-import heroPoster from "@/assets/fazaa-hero-poster.jpg";
-import heroVideo from "@/assets/fazaa-hero.mp4";
-import heroVideoWebm from "@/assets/fazaa-hero.webm";
 import { HeroActions } from "@/components/hero-actions";
+import { HeroVideo } from "@/components/hero-video";
 
 export function Hero() {
   const sceneRef = useRef<HTMLDivElement>(null);
@@ -37,18 +35,7 @@ export function Hero() {
   return (
     <section id="home" aria-labelledby="hero-title" className="hero-section relative isolate z-0 overflow-hidden">
       <div ref={sceneRef} aria-hidden="true" className="hero-media absolute inset-0 z-0">
-        <video
-          className="hero-video"
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="metadata"
-          poster={heroPoster}
-        >
-          <source src={heroVideoWebm} type="video/webm" />
-          <source src={heroVideo} type="video/mp4" />
-        </video>
+        <HeroVideo />
       </div>
       <div aria-hidden="true" className="hero-overlay pointer-events-none absolute inset-0 z-[1]" />
 
