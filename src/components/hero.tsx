@@ -1,9 +1,7 @@
 import { useEffect, useRef } from "react";
 
-import heroPoster from "@/assets/fazaa-hero-poster.jpg";
-import heroVideo from "@/assets/fazaa-hero.mp4";
-import heroVideoWebm from "@/assets/fazaa-hero.webm";
 import { HeroActions } from "@/components/hero-actions";
+import { HeroVideo } from "@/components/hero-video";
 
 export function Hero() {
   const sceneRef = useRef<HTMLDivElement>(null);
