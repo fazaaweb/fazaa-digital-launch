@@ -5,9 +5,43 @@ import heroVideo from "@/assets/fazaa-hero.mp4";
 import heroVideoWebm from "@/assets/fazaa-hero.webm";
 import { HeroActions } from "@/components/hero-actions";
 
+// إعدادات التكرار السلس للفيديو لتجاوز شاشات النهاية أو التجميد
+const LOOP_START = 0.05;
+const LOOP_END = 6.85;
+
 export function Hero() {
   const sceneRef = useRef<HTMLDivElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
+  // التحكم التفاعلي بالتكرار السلس للفيديو
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const handleTimeUpdate = () => {
+      if (video.currentTime >= LOOP_END) {
+        video.currentTime = LOOP_START;
+        if (video.paused) {
+          video.play().catch(() => {});
+        }
+      }
+    };
+
+    const handleEnded = () => {
+      video.currentTime = LOOP_START;
+      video.play().catch(() => {});
+    };
+
+    video.addEventListener("timeupdate", handleTimeUpdate);
+    video.addEventListener("ended", handleEnded);
+
+    return () => {
+      video.removeEventListener("timeupdate", handleTimeUpdate);
+      video.removeEventListener("ended", handleEnded);
+    };
+  }, []);
+
+  // Parallax خفيف على الشاشات الكبيرة
   useEffect(() => {
     const scene = sceneRef.current;
     if (!scene || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
@@ -35,13 +69,13 @@ export function Hero() {
   }, []);
 
   return (
-    <section id="home" aria-labelledby="hero-title" className="hero-section relative isolate z-0 overflow-hidden">
+    <section id="hero" aria-labelledby="hero-title" className="hero-section relative isolate z-0 overflow-hidden">
       <div ref={sceneRef} aria-hidden="true" className="hero-media absolute inset-0 z-0">
         <video
+          ref={videoRef}
           className="hero-video"
           autoPlay
           muted
-          loop
           playsInline
           preload="metadata"
           poster={heroPoster}

@@ -1,26 +1,14 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ContactSection } from "@/components/contact-section";
-import { FaqSection } from "@/components/faq-section";
-import { FloatingActions } from "@/components/floating-actions";
-import { Footer } from "@/components/footer";
-import { Hero } from "@/components/hero";
-import { Navbar } from "@/components/navbar";
-import { PortfolioSection } from "@/components/portfolio-section";
-import { ProcessSection } from "@/components/process-section";
-import { ProjectCalculator } from "@/components/project-calculator";
-import { ServicesSection } from "@/components/services-section";
-import { TestimonialsSection } from "@/components/testimonials-section";
-import { TrustStats } from "@/components/trust-stats";
-import { WhyUsSection } from "@/components/why-us-section";
+import { App } from "@/App";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "فزعة ويب | منصة تصميم وتطوير المواقع والحلول الرقمية الفاخرة" },
+      { title: "فزعة ويب | تصميم وتطوير مواقع إلكترونية احترافية" },
       {
         name: "description",
         content:
-          "فزعة ويب - وكالة تصميم وبرمجة مواقع ومتاجر إلكترونية احترافية سريعة وسينمائية للشركات والمؤسسات برؤية عالمية وأداء فائق.",
+          "فزعة ويب متخصصة في تصميم وبرمجة وتطوير مواقع الويب والمتاجر الإلكترونية للشركات والمؤسسات في اليمن والسوق العربي.",
       },
       {
         property: "og:title",
@@ -35,36 +23,5 @@ export const Route = createFileRoute("/")({
       { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
-  component: Index,
+  component: App,
 });
-
-function Index() {
-  return (
-    <div className="relative min-h-dvh overflow-x-clip bg-background font-sans text-foreground selection:bg-primary selection:text-primary-foreground">
-      {/* Navigation */}
-      <Navbar />
-
-      {/* Hero Section */}
-      <Hero />
-
-      {/* Main Content Sections */}
-      <main className="relative z-10">
-        <TrustStats />
-        <ServicesSection />
-        <PortfolioSection />
-        <ProjectCalculator />
-        <WhyUsSection />
-        <ProcessSection />
-        <TestimonialsSection />
-        <FaqSection />
-        <ContactSection />
-      </main>
-
-      {/* Footer */}
-      <Footer />
-
-      {/* Floating Quick Action Center */}
-      <FloatingActions />
-    </div>
-  );
-}
