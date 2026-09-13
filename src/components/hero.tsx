@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react";
 
 import heroPoster from "@/assets/fazaa-hero-poster.jpg";
 import { HeroActions } from "@/components/hero-actions";
+import { HeroVideo } from "@/components/hero-video";
 
 export function Hero() {
   const sceneRef = useRef<HTMLDivElement>(null);
@@ -49,6 +50,7 @@ export function Hero() {
           decoding="async"
           className="hero-bg"
         />
+        <HeroVideo />
       </div>
       <div aria-hidden="true" className="hero-overlay pointer-events-none absolute inset-0 z-[1]" />
 
