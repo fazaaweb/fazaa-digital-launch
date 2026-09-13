@@ -40,9 +40,7 @@ export function ProcessSection() {
                     </span>
                   )}
                 </div>
-                <h3 className="mt-4 text-lg font-bold text-foreground">
-                  {step.title}
-                </h3>
+                <h3 className="mt-4 text-lg font-bold text-foreground">{step.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-secondary-foreground/80">
                   {step.description}
                 </p>

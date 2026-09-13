@@ -34,7 +34,11 @@ export function Hero() {
   }, []);
 
   return (
-    <section id="hero" aria-labelledby="hero-title" className="hero-section relative isolate z-0 overflow-hidden">
+    <section
+      id="hero"
+      aria-labelledby="hero-title"
+      className="hero-section relative isolate z-0 overflow-hidden"
+    >
       <div ref={sceneRef} aria-hidden="true" className="hero-media absolute inset-0 z-0">
         <img
           src={heroPoster}

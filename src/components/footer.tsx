@@ -5,7 +5,7 @@ import { Phone, MessageSquare, ArrowLeft } from "lucide-react";
 
 export function Footer() {
   const availableSocials = siteConfig.socialLinks.filter(
-    (item) => item.isAvailable && item.name !== "WhatsApp" && item.name !== "اتصال مباشر"
+    (item) => item.isAvailable && item.name !== "WhatsApp" && item.name !== "اتصال مباشر",
   );
 
   return (
@@ -52,9 +52,7 @@ export function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-sm font-bold uppercase tracking-wider text-primary">
-              روابط سريعة
-            </h4>
+            <h4 className="text-sm font-bold uppercase tracking-wider text-primary">روابط سريعة</h4>
             <ul className="mt-4 space-y-2.5">
               {siteConfig.navigationLinks.map((link) => (
                 <li key={link.href}>

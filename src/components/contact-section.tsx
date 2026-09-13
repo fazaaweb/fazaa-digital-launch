@@ -26,12 +26,7 @@ const featureOptions = [
   "أخرى",
 ];
 
-const designStatusOptions = [
-  "لدي هوية بصرية",
-  "أحتاج هوية بصرية",
-  "لدي تصميم جاهز",
-  "أحتاج UI/UX",
-];
+const designStatusOptions = ["لدي هوية بصرية", "أحتاج هوية بصرية", "لدي تصميم جاهز", "أحتاج UI/UX"];
 
 export function ContactSection() {
   const [formData, setFormData] = useState({
@@ -50,9 +45,7 @@ export function ContactSection() {
       const exists = prev.features.includes(feature);
       return {
         ...prev,
-        features: exists
-          ? prev.features.filter((f) => f !== feature)
-          : [...prev.features, feature],
+        features: exists ? prev.features.filter((f) => f !== feature) : [...prev.features, feature],
       };
     });
   };
@@ -164,7 +157,10 @@ export function ContactSection() {
             </div>
 
             <div>
-              <label htmlFor="business-type" className="block text-sm font-semibold text-foreground">
+              <label
+                htmlFor="business-type"
+                className="block text-sm font-semibold text-foreground"
+              >
                 نوع النشاط
               </label>
               <input
@@ -244,9 +240,7 @@ export function ContactSection() {
 
           {/* Identity & Design Status */}
           <fieldset className="border-0 p-0 m-0">
-            <legend className="block text-sm font-semibold text-foreground">
-              الهوية والتصميم
-            </legend>
+            <legend className="block text-sm font-semibold text-foreground">الهوية والتصميم</legend>
             <div className="mt-3 grid grid-cols-2 gap-3 sm:grid-cols-4">
               {designStatusOptions.map((status) => {
                 const isSelected = formData.designStatus === status;

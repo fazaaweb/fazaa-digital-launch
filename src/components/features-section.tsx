@@ -19,7 +19,8 @@ export function FeaturesSection() {
             أهم ميزات مواقعنا
           </h2>
           <p className="mt-4 text-base leading-relaxed text-secondary-foreground/85 sm:text-lg">
-            نحرص على أن يجمع موقعك بين المظهر الاحترافي، الأداء، سهولة الاستخدام، والمتطلبات الأساسية للموقع الحديث.
+            نحرص على أن يجمع موقعك بين المظهر الاحترافي، الأداء، سهولة الاستخدام، والمتطلبات
+            الأساسية للموقع الحديث.
           </p>
         </div>
 
@@ -31,18 +32,14 @@ export function FeaturesSection() {
             >
               <div>
                 <div className="flex items-center justify-between">
-                  <span className="font-mono text-lg font-bold text-primary">
-                    {feature.number}
-                  </span>
+                  <span className="font-mono text-lg font-bold text-primary">{feature.number}</span>
                   {feature.isOptional && (
                     <span className="rounded-md border border-border/80 bg-secondary/50 px-2 py-0.5 text-[11px] font-medium text-muted-foreground">
                       اختياري حسب الطلب
                     </span>
                   )}
                 </div>
-                <h3 className="mt-4 text-lg font-bold text-foreground">
-                  {feature.title}
-                </h3>
+                <h3 className="mt-4 text-lg font-bold text-foreground">{feature.title}</h3>
                 <p className="mt-2.5 text-sm leading-relaxed text-secondary-foreground/80">
                   {feature.description}
                 </p>

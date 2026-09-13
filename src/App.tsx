@@ -16,7 +16,10 @@ import { FloatingActions } from "@/components/floating-actions";
 
 export function App() {
   return (
-    <div className="relative min-h-screen bg-background text-foreground antialiased selection:bg-primary/30 selection:text-white" dir="rtl">
+    <div
+      className="relative min-h-screen bg-background text-foreground antialiased selection:bg-primary/30 selection:text-white"
+      dir="rtl"
+    >
       {/* 01 Navbar */}
       <Navbar />
 

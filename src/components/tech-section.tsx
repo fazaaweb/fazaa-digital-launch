@@ -36,9 +36,7 @@ export function TechSection() {
                 </span>
                 <Code2 className="h-5 w-5 text-muted-foreground/60 transition-colors group-hover:text-primary" />
               </div>
-              <h3 className="mt-4 text-xl font-bold text-foreground">
-                {tech.name}
-              </h3>
+              <h3 className="mt-4 text-xl font-bold text-foreground">{tech.name}</h3>
               <p className="mt-2.5 text-sm leading-relaxed text-secondary-foreground/80">
                 {tech.description}
               </p>

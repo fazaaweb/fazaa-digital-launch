@@ -19,7 +19,8 @@ export function ServicesSection() {
             خدماتنا
           </h2>
           <p className="mt-4 text-base text-secondary-foreground/85 sm:text-lg">
-            نقدم مجموعة متكاملة من خدمات وحلول الويب المصممة خصيصًا لتلبية احتياجات مختلف المشاريع والأعمال.
+            نقدم مجموعة متكاملة من خدمات وحلول الويب المصممة خصيصًا لتلبية احتياجات مختلف المشاريع
+            والأعمال.
           </p>
         </div>
 
@@ -33,9 +34,7 @@ export function ServicesSection() {
                 <span className="font-mono text-xl font-extrabold tracking-widest text-primary/70 transition-colors group-hover:text-primary">
                   {service.number}
                 </span>
-                <h3 className="mt-4 text-xl font-bold text-foreground">
-                  {service.title}
-                </h3>
+                <h3 className="mt-4 text-xl font-bold text-foreground">{service.title}</h3>
                 <p className="mt-3 text-sm font-normal leading-relaxed text-secondary-foreground/80">
                   {service.description}
                 </p>

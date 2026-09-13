@@ -55,9 +55,7 @@ export function WhyUsSection() {
                 <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-primary/20 bg-primary/10 text-primary transition-colors group-hover:border-primary/40 group-hover:bg-primary/20">
                   <IconComponent className="h-6 w-6" />
                 </div>
-                <h3 className="mt-5 text-lg font-bold text-foreground">
-                  {item.title}
-                </h3>
+                <h3 className="mt-5 text-lg font-bold text-foreground">{item.title}</h3>
                 <p className="mt-2.5 text-sm leading-relaxed text-secondary-foreground/80">
                   {item.description}
                 </p>

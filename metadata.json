@@ -1,0 +1,6 @@
+{
+  "name": "فزعة ويب",
+  "description": "فزعة ويب متخصصة في تصميم وبرمجة وتطوير مواقع الويب والمتاجر الإلكترونية للشركات والمؤسسات والمشاريع في اليمن والوطن العربي بأعلى معايير السرعة والأداء.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

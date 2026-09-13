@@ -20,7 +20,8 @@ export function PortfolioSection() {
             بعض أعمالنا
           </h2>
           <p className="mt-4 text-base leading-relaxed text-secondary-foreground/85 sm:text-lg">
-            مجموعة مختارة من تصاميم ومشاريع الويب التي تعكس اهتمامنا بالتفاصيل، التصميم، وتجربة المستخدم.
+            مجموعة مختارة من تصاميم ومشاريع الويب التي تعكس اهتمامنا بالتفاصيل، التصميم، وتجربة
+            المستخدم.
           </p>
         </div>
 
