@@ -25,7 +25,7 @@ export function Navbar() {
     >
       <div className="mx-auto grid h-[3.75rem] w-full max-w-[1560px] grid-cols-[minmax(0,1fr)_auto] items-center gap-3 px-[max(1rem,env(safe-area-inset-right))] sm:h-[4.5rem] sm:px-6 lg:h-24 lg:flex lg:px-10 xl:px-14">
         <a
-          href="#home"
+          href="#hero"
           aria-label="فزعة ويب - الرئيسية"
           className="flex min-w-0 items-center gap-2 focus-visible:rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring sm:gap-2.5"
         >
