@@ -1,45 +1,10 @@
 import { useEffect, useRef } from "react";
 
 import heroPoster from "@/assets/fazaa-hero-poster.jpg";
-import heroVideo from "@/assets/fazaa-hero.mp4";
-import heroVideoWebm from "@/assets/fazaa-hero.webm";
 import { HeroActions } from "@/components/hero-actions";
-
-// إعدادات التكرار السلس للفيديو لتجاوز شاشات النهاية أو التجميد
-const LOOP_START = 0.05;
-const LOOP_END = 6.85;
 
 export function Hero() {
   const sceneRef = useRef<HTMLDivElement>(null);
-  const videoRef = useRef<HTMLVideoElement>(null);
-
-  // التحكم التفاعلي بالتكرار السلس للفيديو
-  useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
-
-    const handleTimeUpdate = () => {
-      if (video.currentTime >= LOOP_END) {
-        video.currentTime = LOOP_START;
-        if (video.paused) {
-          video.play().catch(() => {});
-        }
-      }
-    };
-
-    const handleEnded = () => {
-      video.currentTime = LOOP_START;
-      video.play().catch(() => {});
-    };
-
-    video.addEventListener("timeupdate", handleTimeUpdate);
-    video.addEventListener("ended", handleEnded);
-
-    return () => {
-      video.removeEventListener("timeupdate", handleTimeUpdate);
-      video.removeEventListener("ended", handleEnded);
-    };
-  }, []);
 
   // Parallax خفيف على الشاشات الكبيرة
   useEffect(() => {
@@ -71,32 +36,29 @@ export function Hero() {
   return (
     <section id="hero" aria-labelledby="hero-title" className="hero-section relative isolate z-0 overflow-hidden">
       <div ref={sceneRef} aria-hidden="true" className="hero-media absolute inset-0 z-0">
-        <video
-          ref={videoRef}
-          className="hero-video"
-          autoPlay
-          muted
-          playsInline
-          preload="metadata"
-          poster={heroPoster}
-        >
-          <source src={heroVideoWebm} type="video/webm" />
-          <source src={heroVideo} type="video/mp4" />
-        </video>
+        <img
+          src={heroPoster}
+          alt=""
+          width="1280"
+          height="846"
+          loading="eager"
+          decoding="async"
+          className="hero-bg"
+        />
       </div>
       <div aria-hidden="true" className="hero-overlay pointer-events-none absolute inset-0 z-[1]" />
 
-      <div className="hero-content relative z-10 mx-auto flex w-full max-w-[1560px] flex-col justify-end px-5 pb-[max(3.5rem,env(safe-area-inset-bottom))] pt-28 sm:px-8 sm:pb-16 sm:pt-24 md:justify-center lg:px-12 xl:px-16">
-        <div className="hero-copy w-full max-w-[38rem] xl:w-[48%] xl:max-w-2xl 2xl:max-w-3xl md:my-auto">
+      <div className="hero-content relative z-10 mx-auto flex min-h-[100svh] min-h-[100dvh] w-full max-w-[1560px] flex-col items-center justify-center px-5 text-center sm:px-8 lg:px-12 xl:px-16">
+        <div className="hero-copy w-full max-w-2xl">
           <h1
             id="hero-title"
-            className="hero-reveal max-w-[19.5rem] text-balance text-[1.875rem] font-extrabold leading-[1.2] tracking-tight text-foreground min-[380px]:max-w-[22rem] min-[380px]:text-[2.125rem] sm:max-w-xl sm:text-4xl sm:leading-[1.18] md:text-5xl md:leading-[1.14] xl:max-w-2xl xl:text-[3.85rem] 2xl:max-w-3xl 2xl:text-[4.35rem]"
+            className="hero-reveal text-balance text-[1.875rem] font-extrabold leading-[1.2] tracking-tight text-foreground min-[380px]:text-[2.125rem] sm:text-4xl sm:leading-[1.18] md:text-5xl md:leading-[1.14] xl:text-[3.85rem] 2xl:text-[4.35rem]"
           >
             نصنع حضورًا رقميًا
             <span className="block text-primary-highlight">يليق بمشروعك.</span>
           </h1>
 
-          <p className="hero-reveal hero-delay-1 mt-3.5 max-w-[21.5rem] text-pretty text-[0.9375rem] font-medium leading-relaxed text-secondary-foreground/95 min-[380px]:max-w-[23.5rem] min-[380px]:text-[1rem] sm:mt-5 sm:max-w-xl sm:text-lg sm:leading-relaxed lg:max-w-[34rem] lg:text-[1.125rem] lg:leading-[1.8] xl:text-[1.1875rem]">
+          <p className="hero-reveal hero-delay-1 mt-3.5 mx-auto max-w-xl text-pretty text-[0.9375rem] font-medium leading-relaxed text-secondary-foreground/95 min-[380px]:text-[1rem] sm:mt-5 sm:text-lg sm:leading-relaxed lg:text-[1.125rem] lg:leading-[1.8] xl:text-[1.1875rem]">
             نصمم ونطور مواقع إلكترونية احترافية تجمع بين التصميم المميز، الأداء السريع، وتجربة
             المستخدم السلسة، لتقدم مشروعك بصورة احترافية أمام عملائك.
           </p>
@@ -105,9 +67,10 @@ export function Hero() {
             <HeroActions />
           </div>
 
-          <p className="hero-reveal hero-delay-4 mt-3.5 flex items-center gap-2 text-xs font-medium tracking-wide text-muted-foreground/85 sm:mt-4.5 sm:text-[0.875rem]">
+          <p className="hero-reveal hero-delay-4 mt-3.5 flex items-center justify-center gap-2 text-xs font-medium tracking-wide text-muted-foreground/85 sm:mt-4.5 sm:text-[0.875rem]">
             <span aria-hidden="true" className="h-px w-5 shrink-0 bg-primary/70 sm:w-6" />
             تصميم احترافي • أداء سريع • تجربة تُبنى حول مشروعك
+            <span aria-hidden="true" className="h-px w-5 shrink-0 bg-primary/70 sm:w-6" />
           </p>
         </div>
       </div>

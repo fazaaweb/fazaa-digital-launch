@@ -34,7 +34,7 @@ export function Navbar() {
             width="1144"
             height="768"
             alt="فزعة ويب"
-            className="h-9 w-auto shrink-0 object-contain drop-shadow-logo sm:h-11 lg:h-13"
+            className="h-11 w-auto shrink-0 object-contain drop-shadow-logo sm:h-14 lg:h-16"
           />
           <span className="whitespace-nowrap font-sans text-[1.0625rem] font-bold tracking-tight text-foreground drop-shadow-logo sm:text-lg lg:text-xl">
             {company.name}
