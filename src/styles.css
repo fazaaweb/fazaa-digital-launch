@@ -256,14 +256,13 @@ html {
     transform: translate3d(var(--scene-x, 0), var(--scene-y, 0), 0) scale(1.02);
     transition: transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
   }
-  .hero-video {
-    object-fit: cover;
-    object-position: center 50%;
+  .hero-bg {
+    object-position: center;
   }
   .hero-overlay {
     background:
-      linear-gradient(270deg, rgba(10, 14, 26, 0.85) 0%, rgba(10, 14, 26, 0.65) 45%, rgba(10, 14, 26, 0.25) 75%, transparent 100%),
-      linear-gradient(180deg, rgba(10, 14, 26, 0.25) 0%, transparent 25%, transparent 75%, var(--background) 100%);
+      radial-gradient(ellipse 70% 65% at 50% 50%, rgba(10, 14, 26, 0.7) 0%, rgba(10, 14, 26, 0.48) 44%, rgba(10, 14, 26, 0.18) 80%, rgba(10, 14, 26, 0.08) 100%),
+      linear-gradient(180deg, rgba(10, 14, 26, 0.35) 0%, transparent 28%, transparent 70%, var(--background) 100%);
   }
 }
 
