@@ -2,7 +2,8 @@
 
 ## Active
 
-- (none)
+- [ ] Replace the abstract 3D artwork with a clear 3D website-service visual.
+- [ ] Rebalance the intro copy and artwork so they sit closely side by side on larger screens.
 
 ## Done
 
