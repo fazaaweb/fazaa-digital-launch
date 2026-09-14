@@ -74,12 +74,15 @@ export function Navbar() {
         </nav>
 
         <div className="flex shrink-0 items-center gap-2 justify-self-end">
-          <Button asChild variant="hero" className="group relative hidden h-11 overflow-hidden px-5 transition-all duration-300 hover:shadow-primary/30 active:scale-[0.98] xl:inline-flex">
-            <a href="#contact">
-              <span className="absolute inset-0 -z-10 translate-x-[-150%] bg-gradient-to-r from-transparent via-white/10 to-transparent transition-transform duration-1000 ease-in-out group-hover:translate-x-[150%]" />
-              <span className="transition-transform duration-300 group-hover:scale-[1.02] inline-block">{company.primaryCta}</span>
-            </a>
-          </Button>
+          <div className="relative hidden xl:inline-flex">
+            <span className="absolute -inset-1 -z-10 animate-[pulse_3s_ease-in-out_infinite] rounded-lg bg-primary/40 blur-md" />
+            <Button asChild variant="hero" className="group relative h-11 overflow-hidden px-5 transition-all duration-300 hover:shadow-primary/30 active:scale-[0.98]">
+              <a href="#contact">
+                <span className="absolute inset-0 -z-10 translate-x-[-150%] bg-gradient-to-r from-transparent via-white/10 to-transparent transition-transform duration-1000 ease-in-out group-hover:translate-x-[150%]" />
+                <span className="transition-transform duration-300 group-hover:scale-[1.02] inline-block">{company.primaryCta}</span>
+              </a>
+            </Button>
+          </div>
           <MobileMenu />
         </div>
       </div>

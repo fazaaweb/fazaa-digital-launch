@@ -26,30 +26,29 @@ export function MobileMenu() {
           <Menu aria-hidden="true" />
         </Button>
       </SheetTrigger>
+      
       <SheetContent
         side="right"
         dir="rtl"
-        // Glassmorphism and hiding the default absolute close button
-        className="z-[100] w-full border-gray-800/50 bg-transparent px-6 pb-[max(1.5rem,env(safe-area-inset-bottom))] pt-6  sm:max-w-sm [&>button]:hidden"
+        // w-[75%] makes it take only a portion of the screen, leaving the left side showing the normal site
+        // bg-gray-950/85 backdrop-blur-xl keeps the premium glassmorphism on the menu panel itself
+        className="z-[100] w-[75%] border-l border-gray-800/50 bg-gray-950/85 px-5 pb-[max(1.5rem,env(safe-area-inset-bottom))] pt-6 backdrop-blur-xl sm:max-w-sm [&>button]:hidden"
       >
-        {/* Custom Header */}
         <SheetHeader className="mt-2 w-full space-y-0">
           <div className="flex w-full items-center justify-between">
-            {/* Logo on the Right */}
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2">
               <img
                 src={transparentLogo}
                 width="1144"
                 height="768"
                 alt="فزعة ويب"
-                className="h-12 w-auto object-contain sm:h-14"
+                className="h-10 w-auto object-contain sm:h-12"
               />
-              <span className="text-xl font-bold text-white">{company.name}</span>
+              <span className="text-lg font-bold text-white">{company.name}</span>
             </div>
             
-            {/* Close Button on the Left */}
             <SheetClose className="rounded-full p-2 text-gray-300 transition-colors hover:bg-gray-800 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary">
-              <X className="h-7 w-7" />
+              <X className="h-6 w-6" />
               <span className="sr-only">إغلاق القائمة</span>
             </SheetClose>
           </div>
@@ -57,8 +56,7 @@ export function MobileMenu() {
           <SheetDescription className="sr-only">روابط أقسام موقع فزعة ويب</SheetDescription>
         </SheetHeader>
 
-        {/* Navigation Links */}
-        <nav aria-label="قائمة الهاتف" className="mt-12">
+        <nav aria-label="قائمة الهاتف" className="mt-10">
           <ul className="flex flex-col">
             {navigation.map((item) => (
               <li key={item.href} className="border-b border-gray-800/50">
@@ -75,13 +73,14 @@ export function MobileMenu() {
           </ul>
         </nav>
 
-        {/* CTA Button */}
-        <div className="mt-12">
+        <div className="mt-10 relative">
+          {/* Subtle slow pulsing glow behind the button to attract attention */}
+          <span className="absolute -inset-1 -z-10 animate-[pulse_3s_ease-in-out_infinite] rounded-lg bg-primary/40 blur-md" />
           <SheetClose asChild>
             <Button asChild variant="hero" size="hero" className="group relative w-full overflow-hidden text-lg shadow-lg shadow-primary/25 transition-all duration-300 hover:shadow-primary/30 active:scale-[0.98]">
               <a href="#contact">
                 <span className="absolute inset-0 -z-10 translate-x-[-150%] bg-gradient-to-r from-transparent via-white/10 to-transparent transition-transform duration-1000 ease-in-out group-hover:translate-x-[150%]" />
-                <span className="transition-transform duration-300 group-hover:scale-105 inline-block">اطلب موقعك الآن</span>
+                <span className="transition-transform duration-300 group-hover:scale-[1.02] inline-block">اطلب موقعك الآن</span>
               </a>
             </Button>
           </SheetClose>
