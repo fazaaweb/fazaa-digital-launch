@@ -3,12 +3,9 @@ import { processData } from "@/data/process";
 
 export function ProcessSection() {
   return (
-    <section id="process" aria-labelledby="process-title" className="relative z-10 bg-background py-20 sm:py-28 border-t border-border/20">
+    <section id="process" aria-labelledby="process-title" className="relative z-10 bg-background py-12 sm:py-16 border-t border-border/20">
       <div className="mx-auto max-w-[1000px] px-5 sm:px-8 lg:px-12">
         <div className="mx-auto max-w-2xl text-center flex flex-col items-center mb-16">
-          <span className="inline-flex items-center rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-xs font-medium text-primary mb-4">
-            آلية العمل
-          </span>
           <h2 id="process-title" className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
             كيف نعمل؟
           </h2>

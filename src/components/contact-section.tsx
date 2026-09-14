@@ -25,12 +25,9 @@ export function ContactSection() {
   };
 
   return (
-    <section id="contact" aria-labelledby="contact-title" className="relative z-10 bg-background py-20 sm:py-28 border-t border-border/20">
+    <section id="contact" aria-labelledby="contact-title" className="relative z-10 bg-background py-12 sm:py-16 border-t border-border/20">
       <div className="mx-auto max-w-[1000px] px-5 sm:px-8 lg:px-12">
         <div className="mx-auto text-center flex flex-col items-center">
-          <span className="inline-flex items-center rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-xs font-medium text-primary mb-4">
-            تواصل معنا
-          </span>
           <h2 id="contact-title" className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
             لنبدأ العمل على مشروعك
           </h2>
@@ -104,10 +101,6 @@ export function ContactSection() {
                   <MessageSquare className="h-5 w-5" />
                 </span>
               </Button>
-              <p className="mt-4 text-center text-xs text-muted-foreground flex items-center justify-center gap-1.5">
-                <CheckCircle2 className="h-3.5 w-3.5 text-primary/70" />
-                <span>لن يتم حفظ بياناتك في أي قاعدة بيانات، الإرسال يتم مباشرة عبر تطبيق واتساب.</span>
-              </p>
             </div>
           </form>
         </div>

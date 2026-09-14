@@ -4,12 +4,9 @@ import { Code2 } from "lucide-react";
 
 export function TechSection() {
   return (
-    <section id="technologies" aria-labelledby="tech-title" className="relative z-10 bg-background py-20 sm:py-28 border-t border-border/20">
+    <section id="technologies" aria-labelledby="tech-title" className="relative z-10 bg-background py-12 sm:py-16 border-t border-border/20">
       <div className="mx-auto max-w-[1440px] px-5 sm:px-8 lg:px-12">
         <div className="mx-auto max-w-2xl text-center flex flex-col items-center">
-          <span className="inline-flex items-center rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-xs font-medium text-primary mb-4">
-            البنية البرمجية
-          </span>
           <h2 id="tech-title" className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
             تقنية حديثة خلف كل تجربة
           </h2>

@@ -11,12 +11,9 @@ export function FaqSection() {
   };
 
   return (
-    <section id="faq" aria-labelledby="faq-title" className="relative z-10 bg-background/50 py-20 sm:py-28 border-t border-border/20">
+    <section id="faq" aria-labelledby="faq-title" className="relative z-10 bg-background/50 py-12 sm:py-16 border-t border-border/20">
       <div className="mx-auto max-w-[800px] px-5 sm:px-8">
         <div className="text-center flex flex-col items-center">
-          <span className="inline-flex items-center rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-xs font-medium text-primary mb-4">
-            إجابات واضحة
-          </span>
           <h2 id="faq-title" className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
             الأسئلة الشائعة
           </h2>

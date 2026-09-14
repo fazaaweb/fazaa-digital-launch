@@ -3,12 +3,9 @@ import { audienceData } from "@/data/audience";
 
 export function AudienceSection() {
   return (
-    <section id="audience" aria-labelledby="audience-title" className="relative z-10 bg-background/50 py-20 sm:py-28 border-t border-border/20">
+    <section id="audience" aria-labelledby="audience-title" className="relative z-10 bg-background/50 py-12 sm:py-16 border-t border-border/20">
       <div className="mx-auto max-w-[1000px] px-5 sm:px-8 lg:px-12">
         <div className="mx-auto text-center flex flex-col items-center">
-          <span className="inline-flex items-center rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-xs font-medium text-primary mb-4">
-            نطاق الحلول
-          </span>
           <h2 id="audience-title" className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
             لمن نصمم؟
           </h2>
