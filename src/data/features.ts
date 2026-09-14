@@ -4,6 +4,7 @@ export interface FeatureItem {
   title: string;
   description: string;
   isOptional?: boolean;
+  iconName?: string;
 }
 
 export const featuresData: FeatureItem[] = [
