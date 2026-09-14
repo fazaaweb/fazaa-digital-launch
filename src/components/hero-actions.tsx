@@ -12,7 +12,8 @@ export function HeroActions() {
           <ArrowLeft aria-hidden="true" />
         </a>
       </Button>
-      <Button asChild variant="heroOutline" size="hero" className="w-full sm:w-auto">
+      {/* 4. Improve Secondary Button: Clear border and bright white text */}
+      <Button asChild variant="heroOutline" size="hero" className="w-full sm:w-auto border-2 border-primary/60 text-white hover:bg-primary/20 hover:border-primary hover:text-white shadow-[0_0_15px_rgba(0,0,0,0.5)]">
         <a href="#services">خدماتنا</a>
       </Button>
     </div>

@@ -4,7 +4,7 @@ export function FloatingActions() {
   return (
     <aside
       aria-label="التواصل السريع"
-      className="fixed bottom-[max(1.25rem,env(safe-area-inset-bottom))] left-[max(1.25rem,env(safe-area-inset-left))] z-40"
+      className="fixed bottom-[max(2.5rem,env(safe-area-inset-bottom))] sm:bottom-[max(3rem,env(safe-area-inset-bottom))] left-[max(1.25rem,env(safe-area-inset-left))] z-40"
     >
       <a
         href={`https://wa.me/${siteConfig.whatsappNumber}`}
