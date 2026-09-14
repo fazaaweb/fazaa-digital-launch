@@ -1,49 +1,38 @@
+
 import { processData } from "@/data/process";
 
 export function ProcessSection() {
   return (
-    <section
-      id="process"
-      aria-labelledby="process-title"
-      className="relative z-10 border-t border-border/40 bg-background py-24 sm:py-32"
-    >
-      <div className="mx-auto max-w-[1560px] px-5 sm:px-8 lg:px-12 xl:px-16">
-        <div className="mx-auto max-w-3xl text-center">
-          <span className="text-xs font-bold uppercase tracking-wider text-primary sm:text-sm">
-            خطوات التنفيذ
+    <section id="process" aria-labelledby="process-title" className="relative z-10 bg-background py-20 sm:py-28 border-t border-border/20">
+      <div className="mx-auto max-w-[1000px] px-5 sm:px-8 lg:px-12">
+        <div className="mx-auto max-w-2xl text-center flex flex-col items-center mb-16">
+          <span className="inline-flex items-center rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-xs font-medium text-primary mb-4">
+            آلية العمل
           </span>
-          <h2
-            id="process-title"
-            className="mt-3 text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl lg:text-5xl"
-          >
-            كيف نحول فكرتك إلى موقع؟
+          <h2 id="process-title" className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+            كيف نعمل؟
           </h2>
-          <p className="mt-4 text-base leading-relaxed text-secondary-foreground/85 sm:text-lg">
-            منهجية واضحة ومباشرة تضمن لك تجربة عمل منظمة ومتابعة دقيقة في كل مرحلة.
+          <p className="mt-4 text-base text-muted-foreground sm:text-lg leading-relaxed">
+            خطوات واضحة ومنهجية عمل احترافية لضمان تحويل فكرتك إلى واقع رقمي ناجح.
           </p>
         </div>
 
-        <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {processData.map((step) => (
-            <div
-              key={step.number}
-              className="group relative flex flex-col justify-between rounded-2xl border border-border/50 bg-card/60 p-6 transition-all duration-300 hover:border-primary/40 hover:bg-card hover:shadow-xl hover:shadow-primary/5"
-            >
-              <div>
-                <div className="flex items-center justify-between">
-                  <span className="font-mono text-2xl font-black text-primary/80">
-                    {step.number}
-                  </span>
-                  {step.isOptional && (
-                    <span className="rounded-md border border-primary/30 bg-primary/10 px-2 py-0.5 text-[11px] font-semibold text-primary">
-                      اختياري حسب المشروع
-                    </span>
-                  )}
+        <div className="relative border-r border-border/40 pr-6 sm:pr-10 ml-auto">
+          {processData.map((step, index) => (
+            <div key={step.number} className="relative mb-10 last:mb-0 group">
+              {/* Timeline dot */}
+              <div className="absolute -right-[29px] sm:-right-[45px] top-1 h-3 w-3 rounded-full bg-border border-2 border-background transition-colors duration-300 group-hover:bg-primary group-hover:border-primary/20 group-hover:scale-125" />
+              
+              <div className="flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-6">
+                <span className="text-xl sm:text-2xl font-black text-border transition-colors duration-300 group-hover:text-primary/40">
+                  {String(index + 1).padStart(2, '0')}
+                </span>
+                <div>
+                  <h3 className="text-lg font-bold text-foreground mb-2">{step.title}</h3>
+                  <p className="text-sm sm:text-base leading-relaxed text-muted-foreground">
+                    {step.description}
+                  </p>
                 </div>
-                <h3 className="mt-4 text-lg font-bold text-foreground">{step.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-secondary-foreground/80">
-                  {step.description}
-                </p>
               </div>
             </div>
           ))}

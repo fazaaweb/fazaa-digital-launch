@@ -70,8 +70,7 @@ export function Hero() {
 
           {/* 3. Increase Line-Height for better readability */}
           <p className="hero-reveal hero-delay-1 mt-4 mx-auto max-w-xl text-pretty text-[0.9375rem] font-medium text-gray-200 min-[380px]:text-[1rem] sm:mt-6 sm:text-lg leading-[1.8] sm:leading-[1.9] lg:text-[1.125rem] lg:leading-[2] xl:text-[1.1875rem]">
-            نصمم ونطور مواقع إلكترونية احترافية تجمع بين التصميم المميز، الأداء السريع، وتجربة
-            المستخدم السلسة، لتقدم مشروعك بصورة احترافية أمام عملائك.
+            نصمم مواقع إلكترونية متطورة للشركات والمؤسسات، تجمع بين قوة الأداء وجمال التصميم لتعزيز حضور علامتك التجارية.
           </p>
 
           <div className="mt-6 sm:mt-8">

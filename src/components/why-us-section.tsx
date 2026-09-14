@@ -1,62 +1,38 @@
-import { whyUsData } from "@/data/why-us";
-import {
-  Palette,
-  Zap,
-  Layout,
-  Smartphone,
-  TrendingUp,
-  MessageSquare,
-  CheckCircle2,
-  Sparkles,
-} from "lucide-react";
 
-const iconMap = {
-  Palette,
-  Zap,
-  Layout,
-  Smartphone,
-  TrendingUp,
-  MessageSquare,
-  CheckCircle2,
-  Sparkles,
-};
+import { whyUsData } from "@/data/why-us";
+import { Palette, Zap, Layout, Smartphone, TrendingUp, MessageSquare, CheckCircle2, Sparkles } from "lucide-react";
+
+const iconMap = { Palette, Zap, Layout, Smartphone, TrendingUp, MessageSquare, CheckCircle2, Sparkles };
 
 export function WhyUsSection() {
   return (
-    <section
-      id="why-us"
-      aria-labelledby="why-us-title"
-      className="relative z-10 border-t border-border/40 bg-background py-24 sm:py-32"
-    >
-      <div className="mx-auto max-w-[1560px] px-5 sm:px-8 lg:px-12 xl:px-16">
-        <div className="mx-auto max-w-3xl text-center">
-          <span className="text-xs font-bold uppercase tracking-wider text-primary sm:text-sm">
+    <section id="why-us" aria-labelledby="why-us-title" className="relative z-10 bg-background py-20 sm:py-28 border-t border-border/20">
+      <div className="mx-auto max-w-[1440px] px-5 sm:px-8 lg:px-12">
+        <div className="mx-auto max-w-2xl text-center flex flex-col items-center">
+          <span className="inline-flex items-center rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-xs font-medium text-primary mb-4">
             قيم العمل ومعايير الجودة
           </span>
-          <h2
-            id="why-us-title"
-            className="mt-3 text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl lg:text-5xl"
-          >
+          <h2 id="why-us-title" className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
             لماذا تختار فزعة ويب؟
           </h2>
-          <p className="mt-4 text-base leading-relaxed text-secondary-foreground/85 sm:text-lg">
+          <p className="mt-4 text-base text-muted-foreground sm:text-lg leading-relaxed">
             لأننا نرى الموقع كجزء من مشروعك، وليس مجرد واجهة على الإنترنت.
           </p>
         </div>
 
-        <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-16 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {whyUsData.map((item) => {
             const IconComponent = iconMap[item.iconName as keyof typeof iconMap] || Sparkles;
             return (
               <div
                 key={item.id}
-                className="group relative rounded-2xl border border-border/50 bg-card/60 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:bg-card hover:shadow-xl hover:shadow-primary/5"
+                className="group relative flex flex-col rounded-xl border border-border/30 bg-card/20 p-5 transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:bg-card/40"
               >
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-primary/20 bg-primary/10 text-primary transition-colors group-hover:border-primary/40 group-hover:bg-primary/20">
-                  <IconComponent className="h-6 w-6" />
+                <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg border border-primary/20 bg-primary/5 text-primary transition-colors group-hover:bg-primary/10">
+                  <IconComponent className="h-5 w-5" />
                 </div>
-                <h3 className="mt-5 text-lg font-bold text-foreground">{item.title}</h3>
-                <p className="mt-2.5 text-sm leading-relaxed text-secondary-foreground/80">
+                <h3 className="text-base font-bold text-foreground mb-2">{item.title}</h3>
+                <p className="text-sm leading-relaxed text-muted-foreground">
                   {item.description}
                 </p>
               </div>

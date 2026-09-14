@@ -1,39 +1,29 @@
+
 import { audienceData } from "@/data/audience";
-import { CheckCircle2 } from "lucide-react";
 
 export function AudienceSection() {
   return (
-    <section
-      id="audience"
-      aria-labelledby="audience-title"
-      className="relative z-10 border-t border-border/40 bg-background/80 py-24 sm:py-32"
-    >
-      <div className="mx-auto max-w-[1560px] px-5 sm:px-8 lg:px-12 xl:px-16">
-        <div className="mx-auto max-w-3xl text-center">
-          <span className="text-xs font-bold uppercase tracking-wider text-primary sm:text-sm">
+    <section id="audience" aria-labelledby="audience-title" className="relative z-10 bg-background/50 py-20 sm:py-28 border-t border-border/20">
+      <div className="mx-auto max-w-[1000px] px-5 sm:px-8 lg:px-12">
+        <div className="mx-auto text-center flex flex-col items-center">
+          <span className="inline-flex items-center rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-xs font-medium text-primary mb-4">
             نطاق الحلول
           </span>
-          <h2
-            id="audience-title"
-            className="mt-3 text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl lg:text-5xl"
-          >
-            نصمم لمختلف أنواع المشاريع
+          <h2 id="audience-title" className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+            لمن نصمم؟
           </h2>
-          <p className="mt-4 text-base leading-relaxed text-secondary-foreground/85 sm:text-lg">
+          <p className="mt-4 max-w-2xl text-base text-muted-foreground sm:text-lg leading-relaxed">
             نقدم حلولًا مصممة خصيصًا لتلائم طبيعة أعمالك وأهدافك الرقمية في مختلف القطاعات.
           </p>
         </div>
 
-        <div className="mt-14 grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
+        <div className="mt-14 flex flex-wrap justify-center gap-3 sm:gap-4">
           {audienceData.map((item) => (
             <div
               key={item.id}
-              className="group flex flex-col items-center justify-center rounded-2xl border border-border/50 bg-card/50 p-5 text-center transition-all duration-300 hover:border-primary/40 hover:bg-card hover:shadow-lg hover:shadow-primary/5"
+              className="group cursor-default rounded-full border border-border/30 bg-card/20 px-5 py-2.5 transition-all duration-300 hover:border-primary/40 hover:bg-primary/5 hover:-translate-y-0.5"
             >
-              <div className="flex h-10 w-10 items-center justify-center rounded-full border border-primary/20 bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
-                <CheckCircle2 className="h-5 w-5" />
-              </div>
-              <span className="mt-3 text-sm font-bold text-foreground transition-colors group-hover:text-primary sm:text-base">
+              <span className="text-sm sm:text-base font-semibold text-foreground transition-colors group-hover:text-primary">
                 {item.title}
               </span>
             </div>
