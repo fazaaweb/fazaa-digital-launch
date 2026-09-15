@@ -6,7 +6,7 @@ import { company } from "@/lib/site-config";
 export function HeroActions() {
   return (
     <div className="hero-reveal hero-delay-3 relative z-[11] flex w-full flex-col items-center gap-2.5 sm:w-auto sm:flex-row sm:justify-center sm:gap-3">
-      <div className="relative w-full sm:w-auto">
+      <div className="relative w-full sm:w-auto animate-pulse-scale">
         <span className="absolute -inset-1 -z-10 animate-[pulse_3s_ease-in-out_infinite] rounded-lg bg-primary/40 blur-md" />
         <Button asChild variant="hero" size="hero" className="group relative w-full overflow-hidden shadow-lg shadow-primary/25 transition-all duration-300 hover:shadow-primary/30 active:scale-[0.98] sm:w-auto">
           <a href="#contact">
