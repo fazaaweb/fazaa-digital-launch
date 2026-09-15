@@ -1,6 +1,6 @@
-import ecommerceImg from "@/assets/images/portfolio_ecommerce_1789379975231.jpg";
-import realEstateImg from "@/assets/images/portfolio_real_estate_1789379993897.jpg";
-import dashboardImg from "@/assets/images/portfolio_dashboard_1789380015813.jpg";
+import ecommerceImg from "@/assets/images/simple_ecommerce_website_1789506201251.jpg";
+import realEstateImg from "@/assets/images/simple_business_website_1789506218672.jpg";
+import dashboardImg from "@/assets/images/simple_dashboard_website_1789506231997.jpg";
 
 export interface PortfolioItem {
   id: string;

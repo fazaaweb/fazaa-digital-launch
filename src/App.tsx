@@ -9,9 +9,7 @@ import { WhyUsSection } from "@/components/why-us-section";
 import { FeaturesSection } from "@/components/features-section";
 import { ProcessSection } from "@/components/process-section";
 import { AudienceSection } from "@/components/audience-section";
-import { TechSection } from "@/components/tech-section";
 import { FaqSection } from "@/components/faq-section";
-import { FinalCta } from "@/components/final-cta";
 import { ContactSection } from "@/components/contact-section";
 import { Footer } from "@/components/footer";
 import { FloatingActions } from "@/components/floating-actions";
@@ -58,9 +56,7 @@ export function App() {
         <div className="reveal-up"><FeaturesSection /></div>
         <div className="reveal-up"><ProcessSection /></div>
         <div className="reveal-up"><AudienceSection /></div>
-        <div className="reveal-up"><TechSection /></div>
         <div className="reveal-up"><FaqSection /></div>
-        <div className="reveal-up"><FinalCta /></div>
         <div className="reveal-up"><ContactSection /></div>
       </main>
       <div className="reveal-up"><Footer /></div>
