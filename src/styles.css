@@ -393,3 +393,23 @@ html {
 .animate-pulse-scale {
   animation: pulse-scale 2s ease-in-out infinite;
 }
+
+/* 
+ * Mobile Video Framing Fix 
+ * Adjust container height to reduce the horizontal crop caused by object-fit: cover,
+ * revealing the central animation/hands without distorting the aspect ratio.
+ */
+@media (max-width: 768px) {
+  .hero-media {
+    height: 80%;
+    top: 10%;
+    bottom: auto;
+    /* Fade the top and bottom edges so it blends seamlessly into the dark background */
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 12%, black 88%, transparent 100%);
+    mask-image: linear-gradient(to bottom, transparent 0%, black 12%, black 88%, transparent 100%);
+  }
+  .hero-video, .hero-bg {
+    object-position: center;
+  }
+}
+
