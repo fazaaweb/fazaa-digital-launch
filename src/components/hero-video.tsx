@@ -4,90 +4,55 @@ import heroPoster from "@/assets/fazaa-hero-poster.jpg";
 import heroVideo from "@/assets/fazaa-hero.mp4";
 import heroVideoWebm from "@/assets/fazaa-hero.webm";
 
-/**
- * Dual-video seamless loop technique.
- * Two identical <video> elements are stacked. When the active video
- * approaches its end, the standby video starts from 0 and cross-fades in,
- * then the roles swap. The result is a perfectly continuous animation
- * with zero visible jump, freeze, or black frame.
- */
 export function HeroVideo() {
-  const videoARef = useRef<HTMLVideoElement>(null);
-  const videoBRef = useRef<HTMLVideoElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
-    const videoA = videoARef.current;
-    const videoB = videoBRef.current;
-    if (!videoA || !videoB) return;
+    const video = videoRef.current;
+    if (!video) return;
 
-    let isAActive = true;
-    let transitioning = false;
     let rafId: number;
+    let isSeeking = false;
 
+    // Use requestAnimationFrame for precise detection of the end of the video
     const checkLoop = () => {
-      const active = isAActive ? videoA : videoB;
-      const standby = isAActive ? videoB : videoA;
-
-      if (
-        !transitioning &&
-        active.duration > 0 &&
-        active.currentTime >= active.duration - 0.5
-      ) {
-        transitioning = true;
-
-        // Start standby from the beginning underneath
-        standby.currentTime = 0;
-        standby.play().catch(() => {});
-
-        // Cross-fade: bring standby in, fade active out
-        standby.style.opacity = "1";
-        active.style.opacity = "0";
-
-        // After the CSS transition completes, clean up
-        setTimeout(() => {
-          active.pause();
-          active.currentTime = 0;
-          isAActive = !isAActive;
-          transitioning = false;
-        }, 500);
+      // When we are within 0.1 seconds of the end, seamlessly jump to the start
+      // We skip to 0.05s to avoid the black frame at 0s that some encoders add
+      if (video.duration > 0 && video.currentTime >= video.duration - 0.1) {
+        if (!isSeeking) {
+          isSeeking = true;
+          video.currentTime = 0.05;
+          // Ensure it keeps playing
+          video.play().catch(() => {});
+        }
+      } else {
+        isSeeking = false;
       }
-
+      
       rafId = requestAnimationFrame(checkLoop);
     };
 
+    // Ensure the video plays immediately if possible
+    video.play().catch(() => {});
+    
     rafId = requestAnimationFrame(checkLoop);
 
     return () => cancelAnimationFrame(rafId);
   }, []);
 
-  const fadeTransition = { transition: "opacity 0.45s ease" };
-
   return (
-    <>
-      <video
-        ref={videoARef}
-        className="hero-video"
-        autoPlay
-        muted
-        playsInline
-        preload="auto"
-        poster={heroPoster}
-        style={{ ...fadeTransition, opacity: 1 }}
-      >
-        <source src={heroVideoWebm} type="video/webm" />
-        <source src={heroVideo} type="video/mp4" />
-      </video>
-      <video
-        ref={videoBRef}
-        className="hero-video"
-        muted
-        playsInline
-        preload="auto"
-        style={{ ...fadeTransition, opacity: 0 }}
-      >
-        <source src={heroVideoWebm} type="video/webm" />
-        <source src={heroVideo} type="video/mp4" />
-      </video>
-    </>
+    <video
+      ref={videoRef}
+      className="hero-video"
+      autoPlay
+      muted
+      playsInline
+      preload="auto"
+      poster={heroPoster}
+      loop // Fallback native loop
+    >
+      <source src={heroVideoWebm} type="video/webm" />
+      <source src={heroVideo} type="video/mp4" />
+    </video>
   );
 }
