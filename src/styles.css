@@ -401,15 +401,18 @@ html {
  */
 @media (max-width: 768px) {
   .hero-media {
-    height: 80%;
-    top: 10%;
+    /* Reduced height further to 60% to zoom out more and match Image 1 perfect framing */
+    height: 60%;
+    /* Center it perfectly (100 - 60) / 2 = 20% */
+    top: 20%;
     bottom: auto;
-    /* Fade the top and bottom edges so it blends seamlessly into the dark background */
-    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 12%, black 88%, transparent 100%);
-    mask-image: linear-gradient(to bottom, transparent 0%, black 12%, black 88%, transparent 100%);
+    /* Fade the top and bottom edges smoothly into the dark background */
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
+    mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
   }
   .hero-video, .hero-bg {
     object-position: center;
   }
 }
+
 
