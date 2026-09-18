@@ -24,26 +24,34 @@ export function HeroVideo() {
     let transitioning = false;
     let rafId: number;
 
+    // Ensure standby is primed and ready
+    videoB.currentTime = 0;
+    videoB.pause();
+
     const checkLoop = () => {
       const active = isAActive ? videoA : videoB;
       const standby = isAActive ? videoB : videoA;
 
+      // When the active video is 0.6s away from its end, cross-fade to standby
       if (
         !transitioning &&
         active.duration > 0 &&
-        active.currentTime >= active.duration - 0.5
+        active.currentTime >= Math.max(0, active.duration - 0.6)
       ) {
         transitioning = true;
 
-        // Start standby from the beginning underneath
+        // Reset and play standby immediately
         standby.currentTime = 0;
-        standby.play().catch(() => {});
+        const playPromise = standby.play();
+        if (playPromise !== undefined) {
+          playPromise.catch(() => {});
+        }
 
-        // Cross-fade: bring standby in, fade active out
+        // Smooth cross-fade
         standby.style.opacity = "1";
         active.style.opacity = "0";
 
-        // After the CSS transition completes, clean up
+        // After the transition ends, pause active so it doesn't consume CPU/GPU
         setTimeout(() => {
           active.pause();
           active.currentTime = 0;
@@ -55,12 +63,22 @@ export function HeroVideo() {
       rafId = requestAnimationFrame(checkLoop);
     };
 
+    // Make sure initial video is playing smoothly
+    const startInitial = () => {
+      videoA.play().catch(() => {});
+    };
+    startInitial();
+
     rafId = requestAnimationFrame(checkLoop);
 
-    return () => cancelAnimationFrame(rafId);
+    return () => {
+      cancelAnimationFrame(rafId);
+      videoA.pause();
+      videoB.pause();
+    };
   }, []);
 
-  const fadeTransition = { transition: "opacity 0.45s ease" };
+  const fadeTransition = { transition: "opacity 0.5s ease-in-out", willChange: "opacity" };
 
   return (
     <>
