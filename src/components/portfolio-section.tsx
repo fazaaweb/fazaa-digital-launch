@@ -35,20 +35,9 @@ export function PortfolioSection() {
                   <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent opacity-80" />
                   
                   <div className="absolute bottom-0 left-0 w-full p-6 sm:p-8">
-                    <div className="flex items-center gap-3 mb-3">
-                      <span className="rounded-full border border-primary/30 bg-primary/20 backdrop-blur-md px-2.5 py-0.5 text-[10px] sm:text-xs font-semibold text-primary">
-                        {project.badge}
-                      </span>
-                      <span className="text-[10px] sm:text-xs font-medium text-gray-300">
-                        {project.category}
-                      </span>
-                    </div>
-                    <div className="flex justify-between items-end gap-4">
+                    <div className="flex justify-between items-center gap-4">
                       <div className="max-w-2xl">
-                        <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">{project.title}</h3>
-                        <p className="text-sm sm:text-base text-gray-300 line-clamp-2">
-                          {project.description}
-                        </p>
+                        <h3 className="text-xl sm:text-2xl font-bold text-white drop-shadow-md">{project.title}</h3>
                       </div>
                       <div className="hidden sm:flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white/10 backdrop-blur-md border border-white/20 transition-transform duration-300 group-hover:rotate-45 group-hover:bg-primary/20 group-hover:border-primary/40">
                         <ArrowUpLeft className="h-4 w-4 text-white" />
