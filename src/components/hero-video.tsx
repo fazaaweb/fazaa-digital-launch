@@ -12,13 +12,6 @@ export function HeroVideo() {
       loop
       preload="auto"
       poster={heroPoster}
-      style={{
-        objectFit: "cover",
-        width: "100%",
-        height: "100%",
-        position: "absolute",
-        inset: 0,
-      }}
     >
       <source src={heroVideoWebm} type="video/webm" />
       <source src={heroVideo} type="video/mp4" />
