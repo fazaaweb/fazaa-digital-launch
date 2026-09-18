@@ -1,6 +1,6 @@
 import ecommerceImg from "@/assets/images/portfolio_ecommerce_new_1789518449950.jpg";
-import contractingImg from "@/assets/images/portfolio_contracting_1789518439996.jpg";
-import decorationImg from "@/assets/images/portfolio_decoration_1789518425489.jpg";
+import contractingImg from "@/assets/images/portfolio_contracting_new.png";
+import decorationImg from "@/assets/images/portfolio_decoration_new.jpg";
 
 export interface PortfolioItem {
   id: string;
