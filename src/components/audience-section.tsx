@@ -1,4 +1,5 @@
 import { audienceData } from "@/data/audience";
+import { SectionHeading } from "@/components/section-heading";
 
 export function AudienceSection() {
   return (
@@ -8,17 +9,11 @@ export function AudienceSection() {
       className="relative z-10 bg-background/50 py-12 sm:py-16 border-t border-border/20"
     >
       <div className="mx-auto max-w-[1000px] px-5 sm:px-8 lg:px-12">
-        <div className="mx-auto text-center flex flex-col items-center">
-          <h2
-            id="audience-title"
-            className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl"
-          >
-            لمن نصمم؟
-          </h2>
-          <p className="mt-4 max-w-2xl text-base text-muted-foreground sm:text-lg leading-relaxed">
-            نقدم حلولًا مصممة خصيصًا لتلائم طبيعة أعمالك وأهدافك الرقمية في مختلف القطاعات.
-          </p>
-        </div>
+        <SectionHeading
+          id="audience-title"
+          title="لمن نصمم؟"
+          subtitle="نقدم حلولًا مصممة خصيصًا لتلائم طبيعة أعمالك وأهدافك الرقمية في مختلف القطاعات."
+        />
 
         <div className="mt-14 flex flex-wrap justify-center gap-3 sm:gap-4">
           {audienceData.map((item) => (

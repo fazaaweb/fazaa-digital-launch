@@ -1,4 +1,5 @@
 import { servicesData } from "@/data/services";
+import { SectionHeading } from "@/components/section-heading";
 
 export function ServicesSection() {
   return (
@@ -8,18 +9,11 @@ export function ServicesSection() {
       className="relative z-10 bg-background py-12 sm:py-16 border-t border-border/20"
     >
       <div className="mx-auto max-w-[1440px] px-5 sm:px-8 lg:px-12">
-        <div className="mx-auto max-w-2xl text-center flex flex-col items-center">
-          <h2
-            id="services-title"
-            className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl"
-          >
-            خدماتنا
-          </h2>
-          <p className="mt-4 text-base text-muted-foreground sm:text-lg leading-relaxed">
-            نقدم مجموعة متكاملة من خدمات وحلول الويب المصممة خصيصًا لتلبية احتياجات مختلف المشاريع
-            والأعمال.
-          </p>
-        </div>
+        <SectionHeading
+          id="services-title"
+          title="خدماتنا"
+          subtitle="نقدم مجموعة متكاملة من خدمات وحلول الويب المصممة خصيصًا لتلبية احتياجات مختلف المشاريع والأعمال."
+        />
 
         <div className="mt-16 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {servicesData.map((service) => (

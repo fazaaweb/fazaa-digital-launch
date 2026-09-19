@@ -1,5 +1,6 @@
 import { portfolioData } from "@/data/portfolio";
 import { ArrowUpLeft } from "lucide-react";
+import { SectionHeading } from "@/components/section-heading";
 
 export function PortfolioSection() {
   return (
@@ -9,18 +10,11 @@ export function PortfolioSection() {
       className="relative z-10 bg-background/50 py-12 sm:py-16 border-t border-border/20"
     >
       <div className="mx-auto max-w-[1440px] px-5 sm:px-8 lg:px-12">
-        <div className="mx-auto max-w-2xl text-center flex flex-col items-center">
-          <h2
-            id="portfolio-title"
-            className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl"
-          >
-            بعض أعمالنا
-          </h2>
-          <p className="mt-4 text-base text-muted-foreground sm:text-lg leading-relaxed">
-            مجموعة مختارة من تصاميم ومشاريع الويب التي تعكس اهتمامنا بالتفاصيل، التصميم، وتجربة
-            المستخدم.
-          </p>
-        </div>
+        <SectionHeading
+          id="portfolio-title"
+          title="بعض أعمالنا"
+          subtitle="مجموعة مختارة من تصاميم ومشاريع الويب التي تعكس اهتمامنا بالتفاصيل، التصميم، وتجربة المستخدم."
+        />
 
         <div className="mt-16 grid grid-cols-1 gap-8 lg:grid-cols-12">
           {portfolioData.map((project, index) => {

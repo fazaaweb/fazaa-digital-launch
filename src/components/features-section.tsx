@@ -1,4 +1,5 @@
 import { featuresData } from "@/data/features";
+import { SectionHeading } from "@/components/section-heading";
 import {
   Check,
   ShieldCheck,
@@ -33,17 +34,11 @@ export function FeaturesSection() {
       className="relative z-10 bg-background/50 py-12 sm:py-16 border-t border-border/20"
     >
       <div className="mx-auto max-w-[1440px] px-5 sm:px-8 lg:px-12">
-        <div className="mx-auto max-w-2xl text-center flex flex-col items-center">
-          <h2
-            id="features-title"
-            className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl"
-          >
-            أهم ميزات مواقعنا
-          </h2>
-          <p className="mt-4 text-base text-muted-foreground sm:text-lg leading-relaxed">
-            نهتم بأدق التفاصيل التقنية والفنية لضمان خروج موقعك بأفضل صورة وأعلى أداء.
-          </p>
-        </div>
+        <SectionHeading
+          id="features-title"
+          title="أهم ميزات مواقعنا"
+          subtitle="نهتم بأدق التفاصيل التقنية والفنية لضمان خروج موقعك بأفضل صورة وأعلى أداء."
+        />
 
         <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {featuresData.map((feature, idx) => {

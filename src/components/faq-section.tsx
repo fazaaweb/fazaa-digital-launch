@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { faqData } from "@/data/faq";
 import { ChevronDown } from "lucide-react";
+import { SectionHeading } from "@/components/section-heading";
 
 export function FaqSection() {
   const [openId, setOpenId] = useState<string | null>(null);
@@ -16,14 +17,7 @@ export function FaqSection() {
       className="relative z-10 bg-background/50 py-12 sm:py-16 border-t border-border/20"
     >
       <div className="mx-auto max-w-[800px] px-5 sm:px-8">
-        <div className="text-center flex flex-col items-center">
-          <h2
-            id="faq-title"
-            className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl"
-          >
-            الأسئلة الشائعة
-          </h2>
-        </div>
+        <SectionHeading id="faq-title" title="الأسئلة الشائعة" />
 
         <div className="mt-14 space-y-3">
           {faqData.map((item) => {

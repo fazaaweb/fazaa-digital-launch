@@ -1,4 +1,5 @@
 import { processData } from "@/data/process";
+import { SectionHeading } from "@/components/section-heading";
 
 export function ProcessSection() {
   return (
@@ -8,17 +9,12 @@ export function ProcessSection() {
       className="relative z-10 bg-background py-12 sm:py-16 border-t border-border/20"
     >
       <div className="mx-auto max-w-[1000px] px-5 sm:px-8 lg:px-12">
-        <div className="mx-auto max-w-2xl text-center flex flex-col items-center mb-16">
-          <h2
-            id="process-title"
-            className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl"
-          >
-            كيف نعمل؟
-          </h2>
-          <p className="mt-4 text-base text-muted-foreground sm:text-lg leading-relaxed">
-            خطوات واضحة ومنهجية عمل احترافية لضمان تحويل فكرتك إلى واقع رقمي ناجح.
-          </p>
-        </div>
+        <SectionHeading
+          id="process-title"
+          title="كيف نعمل؟"
+          subtitle="خطوات واضحة ومنهجية عمل احترافية لضمان تحويل فكرتك إلى واقع رقمي ناجح."
+          className="mb-16"
+        />
 
         <div className="relative border-r border-border/40 pr-6 sm:pr-10 ml-auto">
           {processData.map((step, index) => (
