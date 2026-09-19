@@ -1,12 +1,18 @@
-
 import { audienceData } from "@/data/audience";
 
 export function AudienceSection() {
   return (
-    <section id="audience" aria-labelledby="audience-title" className="relative z-10 bg-background/50 py-12 sm:py-16 border-t border-border/20">
+    <section
+      id="audience"
+      aria-labelledby="audience-title"
+      className="relative z-10 bg-background/50 py-12 sm:py-16 border-t border-border/20"
+    >
       <div className="mx-auto max-w-[1000px] px-5 sm:px-8 lg:px-12">
         <div className="mx-auto text-center flex flex-col items-center">
-          <h2 id="audience-title" className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+          <h2
+            id="audience-title"
+            className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl"
+          >
             لمن نصمم؟
           </h2>
           <p className="mt-4 max-w-2xl text-base text-muted-foreground sm:text-lg leading-relaxed">

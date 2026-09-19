@@ -1,15 +1,39 @@
-
 import { whyUsData } from "@/data/why-us";
-import { Palette, Zap, Layout, Smartphone, TrendingUp, MessageSquare, CheckCircle2, Sparkles } from "lucide-react";
+import {
+  Palette,
+  Zap,
+  Layout,
+  Smartphone,
+  TrendingUp,
+  MessageSquare,
+  CheckCircle2,
+  Sparkles,
+} from "lucide-react";
 
-const iconMap = { Palette, Zap, Layout, Smartphone, TrendingUp, MessageSquare, CheckCircle2, Sparkles };
+const iconMap = {
+  Palette,
+  Zap,
+  Layout,
+  Smartphone,
+  TrendingUp,
+  MessageSquare,
+  CheckCircle2,
+  Sparkles,
+};
 
 export function WhyUsSection() {
   return (
-    <section id="why-us" aria-labelledby="why-us-title" className="relative z-10 bg-background py-12 sm:py-16 border-t border-border/20">
+    <section
+      id="why-us"
+      aria-labelledby="why-us-title"
+      className="relative z-10 bg-background py-12 sm:py-16 border-t border-border/20"
+    >
       <div className="mx-auto max-w-[1440px] px-5 sm:px-8 lg:px-12">
         <div className="mx-auto max-w-2xl text-center flex flex-col items-center">
-          <h2 id="why-us-title" className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+          <h2
+            id="why-us-title"
+            className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl"
+          >
             لماذا تختار فزعة ويب؟
           </h2>
           <p className="mt-4 text-base text-muted-foreground sm:text-lg leading-relaxed">
@@ -29,9 +53,7 @@ export function WhyUsSection() {
                   <IconComponent className="h-5 w-5" />
                 </div>
                 <h3 className="text-base font-bold text-foreground mb-2">{item.title}</h3>
-                <p className="text-sm leading-relaxed text-muted-foreground">
-                  {item.description}
-                </p>
+                <p className="text-sm leading-relaxed text-muted-foreground">{item.description}</p>
               </div>
             );
           })}

@@ -394,6 +394,39 @@ html {
   animation: pulse-scale 2s ease-in-out infinite;
 }
 
+@keyframes pulse-button-active {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3), 0 0 0 0 rgba(59, 130, 246, 0.7);
+  }
+  50% {
+    transform: scale(1.03);
+    box-shadow: 0 8px 25px rgba(37, 99, 235, 0.6), 0 0 0 8px rgba(59, 130, 246, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3), 0 0 0 0 rgba(59, 130, 246, 0);
+  }
+}
+.animate-pulse-button {
+  animation: pulse-button-active 2s ease-in-out infinite !important;
+  will-change: transform, box-shadow;
+}
+
+@keyframes thread-glow {
+  0%, 100% {
+    opacity: 0.4;
+    filter: drop-shadow(0 0 2px rgba(59, 130, 246, 0.4));
+  }
+  50% {
+    opacity: 1;
+    filter: drop-shadow(0 0 6px rgba(96, 165, 250, 0.9));
+  }
+}
+.animate-thread-glow {
+  animation: thread-glow 2.5s ease-in-out infinite;
+}
+
 /* 
  * Mobile & Tablet Video Framing
  * Use object-fit: cover to fill the entire hero without any black gaps.

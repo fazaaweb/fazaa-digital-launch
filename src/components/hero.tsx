@@ -57,8 +57,11 @@ export function Hero() {
       <div className="hero-content relative z-10 mx-auto flex min-h-[100svh] min-h-[100dvh] w-full max-w-[1560px] flex-col items-center justify-center px-5 text-center sm:px-8 lg:px-12 xl:px-16">
         <div className="hero-copy relative w-full max-w-2xl">
           {/* 1. Dark Gradient Overlay for Contrast */}
-          <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-background/95 via-background/70 to-transparent blur-2xl scale-125" aria-hidden="true" />
-          
+          <div
+            className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-background/95 via-background/70 to-transparent blur-2xl scale-125"
+            aria-hidden="true"
+          />
+
           <h1
             id="hero-title"
             className="hero-reveal text-balance text-[1.875rem] font-extrabold leading-[1.2] tracking-tight text-foreground min-[380px]:text-[2.125rem] sm:text-4xl sm:leading-[1.18] md:text-5xl md:leading-[1.14] xl:text-[3.85rem] 2xl:text-[4.35rem]"
@@ -70,7 +73,8 @@ export function Hero() {
 
           {/* 3. Increase Line-Height for better readability */}
           <p className="hero-reveal hero-delay-1 mt-4 mx-auto max-w-xl text-pretty text-[0.9375rem] font-medium text-gray-200 min-[380px]:text-[1rem] sm:mt-6 sm:text-lg leading-[1.8] sm:leading-[1.9] lg:text-[1.125rem] lg:leading-[2] xl:text-[1.1875rem]">
-            نصمم مواقع إلكترونية متطورة للشركات والمؤسسات، تجمع بين قوة الأداء وجمال التصميم لتعزيز حضور علامتك التجارية.
+            نصمم مواقع إلكترونية متطورة للشركات والمؤسسات، تجمع بين قوة الأداء وجمال التصميم لتعزيز
+            حضور علامتك التجارية.
           </p>
 
           <div className="mt-6 sm:mt-8">
@@ -79,8 +83,10 @@ export function Hero() {
 
           {/* 5. Bottom Features: Lighter text, explicit bullets with gap */}
           <div className="hero-reveal hero-delay-4 mt-6 sm:mt-8 flex flex-wrap items-center justify-center gap-2 sm:gap-3 text-gray-200 text-xs sm:text-sm font-medium tracking-wide">
-            <span>تصميم احترافي</span> <span className="text-primary text-base sm:text-lg leading-none">•</span>
-            <span>أداء سريع</span> <span className="text-primary text-base sm:text-lg leading-none">•</span>
+            <span>تصميم احترافي</span>{" "}
+            <span className="text-primary text-base sm:text-lg leading-none">•</span>
+            <span>أداء سريع</span>{" "}
+            <span className="text-primary text-base sm:text-lg leading-none">•</span>
             <span>تجربة تُبنى حول مشروعك</span>
           </div>
         </div>

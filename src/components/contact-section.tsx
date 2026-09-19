@@ -1,7 +1,6 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, MessageSquare, CheckCircle2 } from "lucide-react";
+import { ArrowLeft, MessageSquare, CheckCircle2, Instagram } from "lucide-react";
 import { siteConfig } from "@/config/site-config";
 
 export function ContactSection() {
@@ -19,16 +18,23 @@ export function ContactSection() {
 الجوال: ${formData.phone}
 نوع المشروع: ${formData.projectType}
 التفاصيل: ${formData.details}`;
-    
+
     const url = `https://wa.me/${siteConfig.whatsappNumber}?text=${encodeURIComponent(text)}`;
-    window.open(url, '_blank');
+    window.open(url, "_blank");
   };
 
   return (
-    <section id="contact" aria-labelledby="contact-title" className="relative z-10 bg-background py-12 sm:py-16 border-t border-border/20">
+    <section
+      id="contact"
+      aria-labelledby="contact-title"
+      className="relative z-10 bg-background py-12 sm:py-16 border-t border-border/20"
+    >
       <div className="mx-auto max-w-[1000px] px-5 sm:px-8 lg:px-12">
         <div className="mx-auto text-center flex flex-col items-center">
-          <h2 id="contact-title" className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+          <h2
+            id="contact-title"
+            className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl"
+          >
             لنبدأ العمل على مشروعك
           </h2>
           <p className="mt-4 max-w-2xl text-base text-muted-foreground sm:text-lg leading-relaxed">
@@ -36,11 +42,13 @@ export function ContactSection() {
           </p>
         </div>
 
-        <div className="mt-14 rounded-2xl border border-border/40 bg-card/20 p-6 sm:p-10 backdrop-blur-sm">
+        <div className="mt-14 rounded-2xl border border-blue-500/70 bg-card/20 p-6 sm:p-10 backdrop-blur-sm shadow-[0_0_25px_rgba(59,130,246,0.15)]">
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
               <div className="space-y-2">
-                <label htmlFor="name" className="text-sm font-semibold text-foreground">الاسم</label>
+                <label htmlFor="name" className="text-sm font-semibold text-foreground">
+                  الاسم
+                </label>
                 <input
                   id="name"
                   type="text"
@@ -52,7 +60,9 @@ export function ContactSection() {
                 />
               </div>
               <div className="space-y-2">
-                <label htmlFor="phone" className="text-sm font-semibold text-foreground">رقم الجوال</label>
+                <label htmlFor="phone" className="text-sm font-semibold text-foreground">
+                  رقم الجوال
+                </label>
                 <input
                   id="phone"
                   type="tel"
@@ -65,9 +75,11 @@ export function ContactSection() {
                 />
               </div>
             </div>
-            
+
             <div className="space-y-2">
-              <label htmlFor="projectType" className="text-sm font-semibold text-foreground">نوع المشروع (اختياري)</label>
+              <label htmlFor="projectType" className="text-sm font-semibold text-foreground">
+                نوع المشروع (اختياري)
+              </label>
               <select
                 id="projectType"
                 className="w-full rounded-xl border border-border/50 bg-background/50 px-4 py-3 text-base text-foreground focus:border-primary/50 focus:bg-background focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all appearance-none"
@@ -83,7 +95,9 @@ export function ContactSection() {
             </div>
 
             <div className="space-y-2">
-              <label htmlFor="details" className="text-sm font-semibold text-foreground">تفاصيل المشروع (اختياري)</label>
+              <label htmlFor="details" className="text-sm font-semibold text-foreground">
+                تفاصيل المشروع (اختياري)
+              </label>
               <textarea
                 id="details"
                 rows={4}
@@ -95,18 +109,43 @@ export function ContactSection() {
             </div>
 
             <div className="pt-2">
-              <Button type="submit" variant="hero" size="hero" className="w-full text-base sm:text-lg group">
+              <Button
+                type="submit"
+                variant="hero"
+                size="hero"
+                className="w-full text-base sm:text-lg group animate-pulse-button"
+              >
                 <span className="flex items-center gap-3 transition-transform duration-300 group-hover:scale-105">
                   إرسال الطلب
-                  <svg 
-                    xmlns="http://www.w3.org/2000/svg" 
-                    viewBox="0 0 448 512" 
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 448 512"
                     className="h-8 w-8 text-white fill-current"
                   >
-                    <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zM223.9 414.8c-32 0-63.1-8.6-90.5-24.8l-6.5-3.8-67.2 17.6 17.9-65.5-4.2-6.7C55.6 303.3 46.5 264.4 46.5 224c0-97.9 79.7-177.6 177.6-177.6 47.4 0 92.1 18.5 125.6 52 33.5 33.5 52 78.2 52 125.6 0 97.9-79.7 177.6-177.7 177.6zM320.7 274.6c-5.3-2.7-31.5-15.5-36.3-17.3-4.9-1.8-8.4-2.7-12 2.7-3.6 5.3-13.8 17.3-16.9 20.8-3.1 3.6-6.2 4-11.6 1.3-5.3-2.7-22.5-8.3-42.8-26.4-15.8-14.1-26.5-31.5-29.7-36.8-3.1-5.3-.3-8.2 2.4-10.8 2.4-2.4 5.3-6.2 8-9.3 2.7-3.1 3.6-5.3 5.3-8.9 1.8-3.6.9-6.7-.4-9.3-1.3-2.7-12-28.9-16.4-39.6-4.3-10.4-8.7-9-12-9.1-3.1-.1-6.7-.1-10.2-.1-3.6 0-9.3 1.3-14.2 6.7-4.9 5.3-18.6 18.2-18.6 44.4s19.1 51.5 21.8 55.1c2.7 3.6 37.6 57.4 91 80.5 12.7 5.5 22.6 8.8 30.3 11.3 12.7 4 24.3 3.4 33.5 2.1 10.3-1.5 31.5-12.9 35.9-25.3 4.4-12.4 4.4-23.1 3.1-25.3-1.3-2.2-4.9-3.5-10.2-6.2z"/>
+                    <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zM223.9 414.8c-32 0-63.1-8.6-90.5-24.8l-6.5-3.8-67.2 17.6 17.9-65.5-4.2-6.7C55.6 303.3 46.5 264.4 46.5 224c0-97.9 79.7-177.6 177.6-177.6 47.4 0 92.1 18.5 125.6 52 33.5 33.5 52 78.2 52 125.6 0 97.9-79.7 177.6-177.7 177.6zM320.7 274.6c-5.3-2.7-31.5-15.5-36.3-17.3-4.9-1.8-8.4-2.7-12 2.7-3.6 5.3-13.8 17.3-16.9 20.8-3.1 3.6-6.2 4-11.6 1.3-5.3-2.7-22.5-8.3-42.8-26.4-15.8-14.1-26.5-31.5-29.7-36.8-3.1-5.3-.3-8.2 2.4-10.8 2.4-2.4 5.3-6.2 8-9.3 2.7-3.1 3.6-5.3 5.3-8.9 1.8-3.6.9-6.7-.4-9.3-1.3-2.7-12-28.9-16.4-39.6-4.3-10.4-8.7-9-12-9.1-3.1-.1-6.7-.1-10.2-.1-3.6 0-9.3 1.3-14.2 6.7-4.9 5.3-18.6 18.2-18.6 44.4s19.1 51.5 21.8 55.1c2.7 3.6 37.6 57.4 91 80.5 12.7 5.5 22.6 8.8 30.3 11.3 12.7 4 24.3 3.4 33.5 2.1 10.3-1.5 31.5-12.9 35.9-25.3 4.4-12.4 4.4-23.1 3.1-25.3-1.3-2.2-4.9-3.5-10.2-6.2z" />
                   </svg>
                 </span>
               </Button>
+            </div>
+
+            <div className="pt-5 flex flex-col items-center justify-center gap-3">
+              <div className="flex items-center justify-center w-full max-w-xs sm:max-w-sm gap-3">
+                <div className="h-[1px] flex-1 bg-gradient-to-l from-blue-500 via-blue-400 to-transparent shadow-[0_0_8px_rgba(59,130,246,0.5)] animate-thread-glow" />
+                <span className="text-xs font-medium text-muted-foreground whitespace-nowrap select-none">
+                  تابعنا عبر منصاتنا الرسمية
+                </span>
+                <div className="h-[1px] flex-1 bg-gradient-to-r from-blue-500 via-blue-400 to-transparent shadow-[0_0_8px_rgba(59,130,246,0.5)] animate-thread-glow" />
+              </div>
+
+              <a
+                href="https://www.instagram.com/Fazaa_Web/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="حساب فزعة ويب على انستقرام"
+                className="group inline-flex items-center justify-center rounded-full border border-border/50 bg-background/60 p-2.5 text-primary transition-all duration-300 hover:border-primary/50 hover:bg-primary/10 hover:scale-110 shadow-[0_0_15px_rgba(59,130,246,0.2)]"
+              >
+                <Instagram className="h-6 w-6 transition-transform duration-300 group-hover:scale-110" />
+              </a>
             </div>
           </form>
         </div>

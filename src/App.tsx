@@ -1,4 +1,3 @@
-
 import { useEffect } from "react";
 import { Navbar } from "@/components/navbar";
 import { Hero } from "@/components/hero";
@@ -18,7 +17,7 @@ export function App() {
   // Global Intersection Observer for scroll animations
   useEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -32,7 +31,7 @@ export function App() {
       {
         rootMargin: "0px 0px -50px 0px",
         threshold: 0.1,
-      }
+      },
     );
 
     const elements = document.querySelectorAll(".reveal-up");
@@ -49,17 +48,37 @@ export function App() {
       <Navbar />
       <main>
         <Hero />
-        <div className="reveal-up"><IntroSection /></div>
-        <div className="reveal-up"><ServicesSection /></div>
-        <div className="reveal-up"><PortfolioSection /></div>
-        <div className="reveal-up"><WhyUsSection /></div>
-        <div className="reveal-up"><FeaturesSection /></div>
-        <div className="reveal-up"><ProcessSection /></div>
-        <div className="reveal-up"><AudienceSection /></div>
-        <div className="reveal-up"><FaqSection /></div>
-        <div className="reveal-up"><ContactSection /></div>
+        <div className="reveal-up">
+          <IntroSection />
+        </div>
+        <div className="reveal-up">
+          <ServicesSection />
+        </div>
+        <div className="reveal-up">
+          <PortfolioSection />
+        </div>
+        <div className="reveal-up">
+          <WhyUsSection />
+        </div>
+        <div className="reveal-up">
+          <FeaturesSection />
+        </div>
+        <div className="reveal-up">
+          <ProcessSection />
+        </div>
+        <div className="reveal-up">
+          <AudienceSection />
+        </div>
+        <div className="reveal-up">
+          <FaqSection />
+        </div>
+        <div className="reveal-up">
+          <ContactSection />
+        </div>
       </main>
-      <div className="reveal-up"><Footer /></div>
+      <div className="reveal-up">
+        <Footer />
+      </div>
       <FloatingActions />
     </div>
   );

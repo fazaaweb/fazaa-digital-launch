@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { faqData } from "@/data/faq";
 import { ChevronDown } from "lucide-react";
@@ -11,10 +10,17 @@ export function FaqSection() {
   };
 
   return (
-    <section id="faq" aria-labelledby="faq-title" className="relative z-10 bg-background/50 py-12 sm:py-16 border-t border-border/20">
+    <section
+      id="faq"
+      aria-labelledby="faq-title"
+      className="relative z-10 bg-background/50 py-12 sm:py-16 border-t border-border/20"
+    >
       <div className="mx-auto max-w-[800px] px-5 sm:px-8">
         <div className="text-center flex flex-col items-center">
-          <h2 id="faq-title" className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+          <h2
+            id="faq-title"
+            className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl"
+          >
             الأسئلة الشائعة
           </h2>
         </div>
@@ -25,7 +31,7 @@ export function FaqSection() {
             return (
               <div
                 key={item.id}
-                className={`overflow-hidden rounded-xl border transition-all duration-300 ${isOpen ? 'border-primary/30 bg-primary/5' : 'border-border/30 bg-card/20 hover:border-primary/20 hover:bg-card/30'}`}
+                className={`overflow-hidden rounded-xl border transition-all duration-300 ${isOpen ? "border-primary/30 bg-primary/5" : "border-border/30 bg-card/20 hover:border-primary/20 hover:bg-card/30"}`}
               >
                 <button
                   type="button"
@@ -33,15 +39,19 @@ export function FaqSection() {
                   aria-expanded={isOpen}
                   className="flex w-full items-center justify-between p-4 sm:p-5 text-right focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50"
                 >
-                  <span className={`text-sm sm:text-base font-bold transition-colors ${isOpen ? 'text-primary' : 'text-foreground'}`}>
+                  <span
+                    className={`text-sm sm:text-base font-bold transition-colors ${isOpen ? "text-primary" : "text-foreground"}`}
+                  >
                     {item.question}
                   </span>
-                  <div className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-full transition-all duration-300 ${isOpen ? 'bg-primary/20 text-primary rotate-180' : 'bg-white/5 text-muted-foreground'}`}>
+                  <div
+                    className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-full transition-all duration-300 ${isOpen ? "bg-primary/20 text-primary rotate-180" : "bg-white/5 text-muted-foreground"}`}
+                  >
                     <ChevronDown className="h-4 w-4" />
                   </div>
                 </button>
-                <div 
-                  className={`grid transition-all duration-300 ease-in-out ${isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}
+                <div
+                  className={`grid transition-all duration-300 ease-in-out ${isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}
                 >
                   <div className="overflow-hidden">
                     <p className="px-4 sm:px-5 pb-5 text-sm sm:text-base leading-relaxed text-muted-foreground">

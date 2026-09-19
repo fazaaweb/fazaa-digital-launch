@@ -1,4 +1,3 @@
-
 import transparentLogo from "@/assets/fazaa-web-logo-transparent.png";
 import { siteConfig } from "@/config/site-config";
 import { Phone, MessageSquare } from "lucide-react";
@@ -12,7 +11,6 @@ export function Footer() {
     <footer className="relative z-10 border-t border-border/20 bg-background pt-16 pb-8">
       <div className="mx-auto max-w-[1440px] px-5 sm:px-8 lg:px-12">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
-          
           {/* Brand Info */}
           <div className="lg:col-span-5 space-y-6">
             <div className="flex items-center gap-3">
@@ -34,7 +32,7 @@ export function Footer() {
 
           {/* Navigation */}
           <div className="lg:col-span-3">
-            <h4 className="text-sm font-bold text-foreground mb-6">روابط سريعة</h4>
+            <h4 className="text-sm font-bold text-foreground mb-6">NAVIGATE</h4>
             <ul className="space-y-3">
               {siteConfig.navigationLinks.map((link) => (
                 <li key={link.href}>
@@ -51,7 +49,7 @@ export function Footer() {
 
           {/* Contact */}
           <div className="lg:col-span-4">
-            <h4 className="text-sm font-bold text-foreground mb-6">التواصل المباشر</h4>
+            <h4 className="text-sm font-bold text-foreground mb-6">CONTACT</h4>
             <div className="flex flex-col gap-4">
               <a
                 href={`https://wa.me/${siteConfig.whatsappNumber}`}
@@ -73,8 +71,16 @@ export function Footer() {
                 </div>
                 <span>اتصال مباشر</span>
               </a>
+
+              <div className="pt-2 flex flex-col gap-1 text-sm">
+                <span className="text-xs text-muted-foreground">ساعات العمل</span>
+                <span className="text-sm font-medium text-foreground flex items-center gap-1.5">
+                  <span className="text-xs">🟢</span>
+                  <span>مفتوح 24 ساعة</span>
+                </span>
+              </div>
             </div>
-            
+
             {availableSocials.length > 0 && (
               <div className="mt-6 flex flex-wrap gap-4">
                 {availableSocials.map((social) => (
