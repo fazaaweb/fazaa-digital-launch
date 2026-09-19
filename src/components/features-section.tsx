@@ -49,8 +49,8 @@ export function FeaturesSection() {
                 key={feature.id}
                 className={`group flex items-start gap-4 rounded-xl border border-border/30 bg-card/20 p-5 transition-all duration-300 hover:border-primary/30 hover:bg-card/50 ${isLarge ? "md:col-span-2 lg:col-span-1" : ""}`}
               >
-                <div className="flex shrink-0 h-9 w-9 items-center justify-center rounded-full bg-primary/10 text-primary">
-                  <Icon className="h-4 w-4" />
+                <div className="flex shrink-0 h-9 w-9 items-center justify-center rounded-full bg-sky-500/15 border border-sky-400/30 text-sky-400 shadow-[0_0_12px_rgba(56,189,248,0.25)] transition-all duration-300 group-hover:bg-sky-500/25 group-hover:border-sky-400/60 group-hover:shadow-[0_0_18px_rgba(56,189,248,0.45)] group-hover:scale-105">
+                  <Icon className="h-4.5 w-4.5 stroke-[2.5]" />
                 </div>
                 <div>
                   <h3 className="text-base font-bold text-foreground mb-1.5">{feature.title}</h3>
