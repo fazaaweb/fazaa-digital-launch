@@ -54,7 +54,7 @@ export function ContactSection() {
                   type="text"
                   required
                   placeholder="اسمك الكريم"
-                  className="w-full rounded-xl border border-border/50 bg-background/50 px-4 py-3 text-base text-foreground placeholder:text-muted-foreground/50 focus:border-primary/50 focus:bg-background focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all"
+                  className="w-full rounded-xl border border-white/15 bg-white/[0.04] px-4 py-3 text-base text-foreground placeholder:text-slate-400/80 hover:border-white/25 hover:bg-white/[0.06] focus:border-primary focus:bg-white/[0.07] focus:outline-none focus:ring-4 focus:ring-primary/20 focus:shadow-[0_0_16px_rgba(59,130,246,0.2)] transition-all duration-200"
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                 />
@@ -68,8 +68,8 @@ export function ContactSection() {
                   type="tel"
                   required
                   dir="ltr"
-                  placeholder="+966 5X XXX XXXX"
-                  className="w-full rounded-xl border border-border/50 bg-background/50 px-4 py-3 text-base text-foreground placeholder:text-muted-foreground/50 focus:border-primary/50 focus:bg-background focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all text-right"
+                  placeholder="+967 7X XXX XXXX"
+                  className="w-full rounded-xl border border-white/15 bg-white/[0.04] px-4 py-3 text-base text-foreground placeholder:text-slate-400/80 hover:border-white/25 hover:bg-white/[0.06] focus:border-primary focus:bg-white/[0.07] focus:outline-none focus:ring-4 focus:ring-primary/20 focus:shadow-[0_0_16px_rgba(59,130,246,0.2)] transition-all duration-200 text-right"
                   value={formData.phone}
                   onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                 />
@@ -82,15 +82,25 @@ export function ContactSection() {
               </label>
               <select
                 id="projectType"
-                className="w-full rounded-xl border border-border/50 bg-background/50 px-4 py-3 text-base text-foreground focus:border-primary/50 focus:bg-background focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all appearance-none"
+                className="w-full rounded-xl border border-white/15 bg-white/[0.04] px-4 py-3 text-base text-foreground hover:border-white/25 hover:bg-white/[0.06] focus:border-primary focus:bg-background focus:outline-none focus:ring-4 focus:ring-primary/20 focus:shadow-[0_0_16px_rgba(59,130,246,0.2)] transition-all duration-200 appearance-none"
                 value={formData.projectType}
                 onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
               >
-                <option value="">اختر نوع المشروع...</option>
-                <option value="موقع شركة">موقع شركة أو مؤسسة</option>
-                <option value="متجر إلكتروني">متجر إلكتروني</option>
-                <option value="تطبيق ويب">تطبيق ويب / لوحة تحكم</option>
-                <option value="أخرى">أخرى</option>
+                <option value="" className="bg-card text-foreground">
+                  اختر نوع المشروع...
+                </option>
+                <option value="موقع شركة" className="bg-card text-foreground">
+                  موقع شركة أو مؤسسة
+                </option>
+                <option value="متجر إلكتروني" className="bg-card text-foreground">
+                  متجر إلكتروني
+                </option>
+                <option value="تطبيق ويب" className="bg-card text-foreground">
+                  تطبيق ويب / لوحة تحكم
+                </option>
+                <option value="أخرى" className="bg-card text-foreground">
+                  أخرى
+                </option>
               </select>
             </div>
 
@@ -102,7 +112,7 @@ export function ContactSection() {
                 id="details"
                 rows={4}
                 placeholder="حدثنا باختصار عن فكرتك..."
-                className="w-full rounded-xl border border-border/50 bg-background/50 px-4 py-3 text-base text-foreground placeholder:text-muted-foreground/50 focus:border-primary/50 focus:bg-background focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all resize-none"
+                className="w-full rounded-xl border border-white/15 bg-white/[0.04] px-4 py-3 text-base text-foreground placeholder:text-slate-400/80 hover:border-white/25 hover:bg-white/[0.06] focus:border-primary focus:bg-white/[0.07] focus:outline-none focus:ring-4 focus:ring-primary/20 focus:shadow-[0_0_16px_rgba(59,130,246,0.2)] transition-all duration-200 resize-none"
                 value={formData.details}
                 onChange={(e) => setFormData({ ...formData, details: e.target.value })}
               />

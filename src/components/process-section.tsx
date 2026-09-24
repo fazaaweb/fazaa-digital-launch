@@ -26,10 +26,7 @@ export function ProcessSection() {
 
           <div className="space-y-6 sm:space-y-7">
             {processData.map((step) => (
-              <div
-                key={step.number}
-                className="relative flex items-start gap-4 sm:gap-6 group"
-              >
+              <div key={step.number} className="relative flex items-start gap-4 sm:gap-6 group">
                 {/* Number Circle in clean blue */}
                 <div className="relative z-10 flex h-10 w-10 sm:h-12 sm:w-12 shrink-0 items-center justify-center rounded-full border-2 border-blue-500 bg-background text-blue-500 font-bold font-mono text-sm sm:text-base transition-colors duration-200 group-hover:bg-blue-500 group-hover:text-white">
                   {step.number}

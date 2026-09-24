@@ -74,4 +74,3 @@ export const processData: ProcessStepItem[] = [
     deliverable: "دعم فني وتطوير مستمر يواكب توسع نشاطك",
   },
 ];
-
