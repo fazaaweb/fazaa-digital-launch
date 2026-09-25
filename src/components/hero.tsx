@@ -47,6 +47,7 @@ export function Hero() {
           width="1280"
           height="846"
           loading="eager"
+          fetchPriority="high"
           decoding="async"
           className="hero-bg"
         />

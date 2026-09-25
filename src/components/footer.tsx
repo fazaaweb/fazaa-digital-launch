@@ -19,6 +19,8 @@ export function Footer() {
                 width="1144"
                 height="768"
                 alt="فزعة ويب"
+                loading="lazy"
+                decoding="async"
                 className="h-12 w-auto object-contain opacity-90"
               />
               <span className="text-2xl font-bold tracking-tight text-foreground">

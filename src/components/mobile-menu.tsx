@@ -42,6 +42,8 @@ export function MobileMenu() {
                 width="1144"
                 height="768"
                 alt="فزعة ويب"
+                loading="lazy"
+                decoding="async"
                 className="h-10 w-auto object-contain sm:h-12"
               />
               <span className="text-lg font-bold text-white">{company.name}</span>

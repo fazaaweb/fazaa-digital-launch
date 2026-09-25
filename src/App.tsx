@@ -23,8 +23,7 @@ export function App() {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add("is-revealed");
-            // Optional: stop observing once revealed
-            // observer.unobserve(entry.target);
+            observer.unobserve(entry.target);
           }
         });
       },

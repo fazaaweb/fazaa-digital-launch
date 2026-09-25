@@ -15,4 +15,8 @@ export default defineConfig({
     host: "0.0.0.0",
     allowedHosts: true,
   },
+  build: {
+    cssMinify: true,
+    chunkSizeWarningLimit: 1000,
+  },
 });

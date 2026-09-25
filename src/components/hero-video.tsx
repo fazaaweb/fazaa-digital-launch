@@ -91,6 +91,12 @@ export function HeroVideo() {
         preload="auto"
         poster={heroPoster}
         style={{ ...fadeTransition, opacity: 1 }}
+        onPlay={() => {
+          // Defer secondary video buffer until primary video has started playing
+          if (videoBRef.current && videoBRef.current.preload !== "auto") {
+            videoBRef.current.preload = "auto";
+          }
+        }}
       >
         <source src={heroVideoWebm} type="video/webm" />
         <source src={heroVideo} type="video/mp4" />
@@ -100,7 +106,7 @@ export function HeroVideo() {
         className="hero-video"
         muted
         playsInline
-        preload="auto"
+        preload="none"
         style={{ ...fadeTransition, opacity: 0 }}
       >
         <source src={heroVideoWebm} type="video/webm" />

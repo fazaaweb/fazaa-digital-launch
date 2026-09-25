@@ -46,6 +46,8 @@ export function Navbar() {
               width="1144"
               height="768"
               alt="فزعة ويب"
+              loading="eager"
+              decoding="async"
               className={`shrink-0 object-contain drop-shadow-logo transition-all duration-300 ease-in-out ${
                 isLogoScrolled
                   ? "w-[44px] h-[44px] sm:w-[52px] sm:h-[52px] lg:w-[60px] lg:h-[60px]"
